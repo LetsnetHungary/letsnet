@@ -1,0 +1,37 @@
+
+ ----- 
+This log has been created at May 15, 2017, 10:20 pm by usersapi_Model -> newuser; 
+ 
+An existing user has the same UNIQUEKEY (pu4v7bgj5t) or EMAIL (as) ...; 
+ 
+ END LOG;
+ ----- 
+This log has been created at May 15, 2017, 10:29 pm by usersapi_Model -> newuser; 
+ 
+Missing data from NEWUSER FORM; 
+ 
+ END LOG;
+ ----- 
+This log has been created at May 15, 2017, 10:29 pm by usersapi_Model -> newuser; 
+ 
+Missing data from NEWUSER FORM; 
+ 
+ END LOG;
+ ----- 
+This log has been created at May 15, 2017, 11:00 pm by usersapi_Model -> newuser; 
+ 
+An existing user has the same UNIQUEKEY (ipn8wacvkd) or EMAIL (a) ...; 
+ 
+ END LOG;
+ ----- 
+This log has been created at May 15, 2017, 11:06 pm by usersapi_Model -> newuser; 
+ 
+An existing user has the same UNIQUEKEY (fv17selcz8) or EMAIL (aaaa) ...; 
+ 
+ END LOG;
+ ----- 
+This log has been created at May 15, 2017, 11:06 pm by usersapi_Model -> newuser; 
+ 
+An existing user has the same UNIQUEKEY (kq3mivzbaf) or EMAIL (aaaa) ...; 
+ 
+ END LOG;

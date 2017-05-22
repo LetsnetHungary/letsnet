@@ -1,0 +1,23 @@
+{
+	"css" : {
+		"0" : "../_assets/_css/Orders/orders.css",
+		"1" : "../assets/widgets/modal/modal.css"
+	},
+
+	"js" : {
+		"0" : "../_assets/_js/Orders/o.js",
+		"1" : "../assets/widgets/modal/modal.js"
+	},
+
+	"seo" : {
+		"title" : "Rendelések",
+		"charset" : "UTF-8",
+
+		"meta" : {
+		},
+
+		"og" : {
+
+		}
+	}
+}

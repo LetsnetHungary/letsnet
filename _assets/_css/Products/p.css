@@ -1,0 +1,136 @@
+.cat_button {
+    margin-right: 10px;
+}
+.c_white {
+  color: rgb(231, 231, 231)!important;
+}
+.c_black {
+  color: rgb(62, 62, 62)!important;
+}
+
+.littlecategory__holder {
+  margin-top: 10px;
+}
+
+.products__holder {
+  width: 100%;
+  min-height: 300px;
+}
+
+.main_prop_holder {
+  margin-top: 30px;
+}
+
+.opt_btn_holder {
+  display: flex;
+  justify-content: space-around;
+}
+
+.opt_btn {
+  width: 48%;
+}
+
+.image_holder {
+  margin-top: 40px;
+  margin: 12.5px 12.5px;
+  display: flex;
+  flex-wrap: wrap;
+flex-direction: column;
+}
+
+.prod_props {
+    margin: 30px 0;
+}
+
+.prod_props_holder {
+  margin: 12.5px;
+}
+
+.prod_image {
+  height: 250px;
+  width: 250px;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+.image_btn {
+  width: 100%;
+  margin: 12.5px 0;
+}
+
+.prod_category_holder {
+  margin: 25px 12.5px;
+}
+
+.prop_input {
+  margin-bottom: 12.5px!important;
+}
+
+.one_category_holder {
+  margin: 15px 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  border-bottom: 1px dashed #F44336;
+  border-top: 1px dashed #F44336;
+
+}
+
+.one_category_holder button {
+  font-size: 11px!important;
+  padding: 0 10px;
+  margin: 6.25px;
+}
+
+.one_category_holder i {
+  margin-left: 5px;
+}
+
+.pluscategory {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.plusbtn {
+  margin: 12.5px 12.5px;
+}
+
+.prod_props {
+  margin: 25px 12.5px;
+}
+
+.prod_props_holder {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.properties_holder {
+  margin: 12.5px 12.5px;
+}
+
+.properties {
+  display: flex;
+  flex-direction: column;
+}
+
+.one_property_holder {
+  margin: 10px 0;
+}
+
+.sold_holder {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+}
+
+.sold_holder h5 {
+  width: 30%;
+}
+
+.delete_prod_holder {
+  margin: 12.5px;
+}

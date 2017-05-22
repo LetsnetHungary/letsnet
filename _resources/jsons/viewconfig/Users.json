@@ -1,0 +1,25 @@
+{
+  "css" :
+  {
+
+  },
+  "js" :
+  {
+    "1" : "../../_assets/_js/Users/u.js"
+  },
+  "seo" :
+  {
+    "title" : "Felhasználók",
+    "charset" : "UTF-8",
+
+    "meta" :
+    {
+
+    },
+
+    "og" :
+    {
+
+    }
+  }
+}

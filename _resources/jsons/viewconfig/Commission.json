@@ -1,0 +1,22 @@
+{
+	"css" :
+	{
+	},
+	"js" :
+	{
+		"1" : "../../_assets/_js/Commission/c.js"
+	},
+	"seo" :
+	{
+		"title" : "Bizományi rendszer",
+		"charset" : "UTF-8",
+
+		"meta" :
+		{
+		},
+
+		"og" :
+		{
+		}
+	}
+}

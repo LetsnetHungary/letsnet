@@ -1,0 +1,25 @@
+{
+  "css" :
+  {
+
+  },
+  "js" :
+  {
+
+  },
+  "seo" :
+  {
+    "title" : "Belépés",
+    "charset" : "UTF-8",
+
+    "meta" :
+    {
+      "description" : "A weboldalad kezeléséhez kérjük lépj be!"
+    },
+
+    "og" :
+    {
+
+    }
+  }
+}
