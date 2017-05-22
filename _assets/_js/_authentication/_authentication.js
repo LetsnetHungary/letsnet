@@ -25,6 +25,12 @@ $(function () {
       var p = $("#mp").val()
       sendingLoginRequest(e, p)
     })
+    $('.input').keypress(function(e) {
+        if(e.which == 13) {
+            jQuery(this).blur();
+            jQuery('#1').focus().click();
+        }
+    });
 })
 
 function showLocation(position) {

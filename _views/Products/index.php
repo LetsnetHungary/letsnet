@@ -1,4 +1,6 @@
-
+<script type="text/javascript" src="../../_assets/_js/Products/images.js"></script>
+<script type="text/javascript" src="../../_assets/_js/Products/properties.js"></script>
+<script type="text/javascript" src="../../_assets/_js/Products/products.js"></script>
 <?php $pagemodules = $this->pageModules; ?>
 
 <div id="sb-site">
@@ -150,54 +152,51 @@
                         <span class="input-group-addon addon-inside btn-primary">
                             <i class="glyph-icon icon-cogs"></i>
                         </span>
-                        <input type="text" class="form-control prop_input" placeholder="Termékkód">
+                        <input id="prodid" type="text" class="form-control prop_input" placeholder="Termékkód">
                     </div>
                     <div class="input-group">
                         <span class="input-group-addon addon-inside btn-primary">
                             <i class="glyph-icon icon-cogs"></i>
                         </span>
-                        <input type="text" class="form-control prop_input" placeholder="Terméknév">
+                        <input id="name" type="text" class="form-control prop_input" placeholder="Terméknév">
                     </div>
                     <div class="input-group">
                         <span class="input-group-addon addon-inside btn-primary">
                             <i class="glyph-icon icon-cogs"></i>
                         </span>
-                        <input type="text" class="form-control prop_input" placeholder="Ár">
+                        <input id="price" type="text" class="form-control prop_input" placeholder="Ár">
                     </div>
 
                     <div class="sold_holder">
-                      <h5>Elfogyott</h5><input type="checkbox" class="input-switch-alt" style="display: none;">
+                      <h5>Elfogyott</h5><input id="stock" type="checkbox" class="input-switch-alt" style="display: none;">
                     </div>
 
                   </div>
 
-                  <div class="prod_category_holder">
+                  <div id="prod_category_holder" class="prod_category_holder">
                     <h3 class="title-hero">Kategóriák</h3>
 
                     <div class="one_category_holder">
-                      <button class="btn ra-100 btn-default">Karkötők<div class="ripple-wrapper"></div> <i class="glyph-icon icon-chevron-right"></i></button>
-                      <button class="btn ra-100 btn-default">Knotaclat<div class="ripple-wrapper"></div> <i class="glyph-icon icon-chevron-right"></i></button>
-                      <button class="btn ra-100 btn-default">Karkötők<div class="ripple-wrapper"></div> <i class="glyph-icon icon-chevron-right"></i></button>
-                      <button class="btn ra-100 btn-default">Karkötők<div class="ripple-wrapper"></div> <i class="glyph-icon icon-chevron-right"></i></button>
+                      <button class="btn ra-100 btn-default btn_cat">Karkötők<div class="ripple-wrapper"></div> <i class="glyph-icon icon-chevron-right"></i></button>
+                      <button class="btn ra-100 btn-default btn_cat">Knotaclat<div class="ripple-wrapper"></div> <i class="glyph-icon icon-chevron-right"></i></button>
+                      <button class="btn ra-100 btn-default btn_cat">Karkötők<div class="ripple-wrapper"></div> <i class="glyph-icon icon-chevron-right"></i></button>
+                      <button class="btn ra-100 btn-default btn_cat">Karkötők<div class="ripple-wrapper"></div> <i class="glyph-icon icon-chevron-right"></i></button>
                     </div>
 
                     <div class="one_category_holder">
-                      <button class="btn ra-100 btn-default">Karkötők<div class="ripple-wrapper"></div> <i class="glyph-icon icon-chevron-right"></i></button>
-                      <button class="btn ra-100 btn-default">Knotaclat<div class="ripple-wrapper"></div> <i class="glyph-icon icon-chevron-right"></i></button>
-                      <button class="btn ra-100 btn-default">Karkötők<div class="ripple-wrapper"></div> <i class="glyph-icon icon-chevron-right"></i></button>
+                      <button class="btn ra-100 btn-default btn_cat">Karkötők<div class="ripple-wrapper"></div> <i class="glyph-icon icon-chevron-right"></i></button>
+                      <button class="btn ra-100 btn-default btn_cat">Knotaclat<div class="ripple-wrapper"></div> <i class="glyph-icon icon-chevron-right"></i></button>
+                      <button class="btn ra-100 btn-default btn_cat">Karkötők<div class="ripple-wrapper"></div> <i class="glyph-icon icon-chevron-right"></i></button>
                     </div>
-
-                    <a href="#" class="btn btn-primary popover-button-default pluscategory btn-sm" data-content="<div></div>" title="" data-placement="left" data-original-title="Kategória csoport hozzáadása">
-                            + kategória csoport hozzáadása
-                        <div class="ripple-wrapper"></div></a>
-
-
                   </div>
+                  <a id="addgroup" href="#" class="btn btn-primary popover-button-default pluscategory btn-sm" title="" data-placement="left" data-original-title="Kategória csoport hozzáadása">
+                          + kategória csoport hozzáadása
+                      <div class="ripple-wrapper"></div></a>
 
-                  <div class="prod_props">
+                  <div id="prod_labels" class="prod_props">
                     <h3 class="title-hero">Címkék</h3>
 
-                    <div class="prod_props_holder">
+                    <div id="prod_label_holder" class="prod_props_holder">
                       <a class="btn btn-link font-red" href="#">Piros</a>
                       <a class="btn btn-link font-red" href="#">Szövet</a>
                       <a class="btn btn-link font-red" href="#">Literes</a>
@@ -212,37 +211,43 @@
                       <a class="btn btn-link font-red" href="#">Literes</a>
                     </div>
 
-                    <a href="#" class="btn btn-primary popover-button-default pluscategory btn-sm" data-content="<div></div>" title="" data-placement="left" data-original-title="Címke hozzáadása">
+                    <a id="addlabel" href="#" class="btn btn-primary popover-button-default pluscategory btn-sm" title="" data-placement="left" data-original-title="Címke hozzáadása">
                             + címke hozzáadása
                         <div class="ripple-wrapper"></div></a>
                   </div>
 
                   <div class="properties_holder">
                     <h3 class="title-hero">Tulajdonságok</h3>
-                    <div class="properties">
-                      <div class="one_property_holder">
-                        <input type="text" class="form-control" id="" placeholder="Akármilyen leírás...">
-                      </div>
-                      <div class="one_property_holder">
-                        <input type="text" class="form-control" id="" placeholder="Akármilyen leírás...">
-                      </div>
-                      <div class="one_property_holder">
-                        <input type="text" class="form-control" id="" placeholder="Akármilyen leírás...">
-                      </div>
+                    <div id="properties" class="properties">
                     </div>
-                    <button class="btn btn-primary btn-sm image_btn">+ tulajdonság hozzáadása<div class="ripple-wrapper"></div></button>
-
+                    <a id="addproperty" href="#" class="btn btn-primary popover-button-default pluscategory btn-sm" title="" data-placement="left" data-original-title="Tulajdonság hozzáadása">
+                            + tulajdonság hozzáadása
+                        <div class="ripple-wrapper"></div></a>
                   </div>
 
                   <div class="image_holder">
                     <h3 class="title-hero">Termék képek</h3>
-
-                    <img class="prod_image" src="http://placehold.it/250x250" alt="">
-                    <button class="btn btn-primary btn-sm image_btn">Új képek hozzáadása<div class="ripple-wrapper"></div></button>
+                    <ul id="prod_img_holder" style="display: none;" class="prod_img_holder"></ul>
+                    <div id="prod_carousel" class="carousel prod_carousel" data-ride="carousel">
+                      <ol class="carousel-indicators"></ol>
+                      <div class="carousel-inner"></div>
+                      <a class="left carousel-control" href="#prod_carousel" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                      </a>
+                      <a class="right carousel-control" href="#prod_carousel" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                      </a>
+                    </div>
+                    <input type="file" style="display:none" id="prod_imgupload" accept="image/*" multiple>
+                    <button id="prod_btn_addimg" style="display:none;" class="btn btn-primary btn-sm image_btn">Új képek hozzáadása<div class="ripple-wrapper"></div></button>
+                    <button id="prod_btn_modify" data-type="0" class="btn btn-primary btn-sm image_btn">Módosítás<div class="ripple-wrapper"></div></button>
                   </div>
-
                   <div class="delete_prod_holder">
-                    <button class="btn btn-danger btn-sm image_btn">Termék törlése<div class="ripple-wrapper"></div></button>
+                    <button id="add_product" class="btn btn-success btn-sm image_btn">Termék feltöltése<div class="ripple-wrapper"></div></button>
+
+                  </div>
+                  <div class="delete_prod_holder">
+                    <button id="delete_product" class="btn btn-danger btn-sm image_btn">Termék törlése<div class="ripple-wrapper"></div></button>
 
                   </div>
 
@@ -283,6 +288,10 @@
 <!-- Bootstrap Buttons -->
 
 <script type="text/javascript" src="../../assets/widgets/button/button.js"></script>
+
+<!-- Bootstrap Carousel -->
+
+<script type="text/javascript" src="../../assets/widgets/carousel/carousel.js"></script>
 
 <!-- Bootstrap Collapse -->
 
