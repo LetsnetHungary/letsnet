@@ -20,7 +20,7 @@
 
       $api_output = curl_exec ($ch);
       curl_close($ch);
-      echo "lashbdfljhasd";
+      
       return($api_output);
 
 
