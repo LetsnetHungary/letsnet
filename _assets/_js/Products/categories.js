@@ -10,13 +10,14 @@ $(function() {
     `);
     for (var id in subcats) {
       listelem = '<li data-id="' +
-      id + '"><a href="#">' + subcats[id] +'</a></li>';
+      id + '"><a>' + subcats[id] +'</a></li>';
       maincat.find('ul').append(listelem);
     }
     $('#cat_btn_holder').append(maincat);
   }
-  $('#cat_btn_holder').on('click', 'a', function(e) {
+  $('#cat_btn_holder').on('click', 'li', function(e) {
     var self = $(this);
+    console.log('asd')
     $.ajax({
         url: "../categoryapi/getCategories",
         type: "post",
@@ -25,8 +26,12 @@ $(function() {
         },
         datatype: 'json',
         success: function(data){
+          console.log(data)
           obj = $.parseJSON(data);
           createCategory(obj.name, obj.subcats);
+        },
+        error: function(data) {
+          console.log(data)
         }
     });
   });

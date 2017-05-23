@@ -1,4 +1,5 @@
 <script type="text/javascript" src="../../_assets/_js/Products/images.js"></script>
+<script type="text/javascript" src="../../_assets/_js/Products/categories.js"></script>
 <script type="text/javascript" src="../../_assets/_js/Products/properties.js"></script>
 <script type="text/javascript" src="../../_assets/_js/Products/products.js"></script>
 <?php $pagemodules = $this->pageModules; ?>
@@ -110,8 +111,8 @@
                   <div class="btn-group cat_button">
                     <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Kategóriák<span class="caret"></span><div class="ripple-wrapper"></div></button>
                     <ul class="dropdown-menu" role="menu">
-                        <li data-id="taska"><a href="#">Táska</a></li>
-                        <li data-id="nadrag"><a href="#">Nadrág</a></li>
+                        <li data-id="taska"><a>Táska</a></li>
+                        <li data-id="nadrag"><a>Nadrág</a></li>
                     </ul>
                   </div>
                 </div>
