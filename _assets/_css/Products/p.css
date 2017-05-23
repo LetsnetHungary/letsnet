@@ -54,7 +54,6 @@ flex-direction: column;
 }
 
 .prod_img_holder {
-  min-height: 250px;
   width: 250px;
   display: flex;
   flex-wrap: wrap;
@@ -171,10 +170,16 @@ button.selected, a.selected {
 .properties {
   display: flex;
   flex-direction: column;
+  list-style-type: none;
+  padding: 0;
+  overflow: auto;
 }
 
 .one_property_holder {
   margin: 10px 0;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
 }
 
 .sold_holder {

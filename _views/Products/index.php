@@ -106,25 +106,12 @@
           <div class="col-md-8">
             <div class="panel">
               <div class="panel-body">
-                <div class="category_btn_holder">
+                <div id="cat_btn_holder" class="category_btn_holder">
                   <div class="btn-group cat_button">
-                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Kategóriák <span class="caret"></span><div class="ripple-wrapper"></div></button>
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Kategóriák<span class="caret"></span><div class="ripple-wrapper"></div></button>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                    </ul>
-                  </div>
-                  <div class="btn-group cat_button">
-                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Kategóriák <span class="caret"></span><div class="ripple-wrapper"></div></button>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
+                        <li data-id="taska"><a href="#">Táska</a></li>
+                        <li data-id="nadrag"><a href="#">Nadrág</a></li>
                     </ul>
                   </div>
                 </div>
@@ -218,8 +205,8 @@
 
                   <div class="properties_holder">
                     <h3 class="title-hero">Tulajdonságok</h3>
-                    <div id="properties" class="properties">
-                    </div>
+                    <ul id="properties" class="properties">
+                    </ul>
                     <a id="addproperty" href="#" class="btn btn-primary popover-button-default pluscategory btn-sm" title="" data-placement="left" data-original-title="Tulajdonság hozzáadása">
                             + tulajdonság hozzáadása
                         <div class="ripple-wrapper"></div></a>
@@ -233,9 +220,11 @@
                       <div class="carousel-inner"></div>
                       <a class="left carousel-control" href="#prod_carousel" data-slide="prev">
                         <span class="glyphicon glyphicon-chevron-left"></span>
+                        <span class="sr-only">Previous</span>
                       </a>
                       <a class="right carousel-control" href="#prod_carousel" data-slide="next">
                         <span class="glyphicon glyphicon-chevron-right"></span>
+                        <span class="sr-only">Next</span>
                       </a>
                     </div>
                     <input type="file" style="display:none" id="prod_imgupload" accept="image/*" multiple>
@@ -290,7 +279,6 @@
 <script type="text/javascript" src="../../assets/widgets/button/button.js"></script>
 
 <!-- Bootstrap Carousel -->
-
 <script type="text/javascript" src="../../assets/widgets/carousel/carousel.js"></script>
 
 <!-- Bootstrap Collapse -->

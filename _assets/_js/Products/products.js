@@ -9,7 +9,7 @@ $(function() {
     categories = new Array();
     $('.one_category_holder').each(function() {
       cat = new Array();
-      $(this).find('.selected').each(function() {
+      $(this).find('button').each(function() {
         cat.push($(this).text());
       });
       if(cat.length > 0) {categories.push(cat.slice());}
@@ -52,6 +52,7 @@ $(function() {
     });
     product.images = images.slice();
     holder.product = product;
+    console.log(JSON.stringify(holder))
     $.ajax({
           type        : 'POST',
           url         : '../prodapi/itemchange',
