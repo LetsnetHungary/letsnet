@@ -7,6 +7,7 @@
     }
 
     public function getCategory($p) {
+      $sitekey =  CoreApp\Session::get("sitekey");
       $id = $p["id"];
       $ch = curl_init();
       curl_setopt($ch, CURLOPT_URL,"http://a.$sitekey".CoreApp\ServerHandler::curlEnding()."/categoryapi/getCategory");
@@ -20,10 +21,7 @@
 
       $api_output = curl_exec ($ch);
       curl_close($ch);
-      
+
       return($api_output);
-
-
-
     }
   }
