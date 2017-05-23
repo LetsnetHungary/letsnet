@@ -7,8 +7,7 @@
     }
 
     public function getCategory($p) {
-      $id = $p["id"]
-
+      $id = $p["id"];
       $ch = curl_init();
       curl_setopt($ch, CURLOPT_URL,"http://a.$sitekey".CoreApp\ServerHandler::curlEnding()."/commissionapi/addCommission");
       curl_setopt($ch, CURLOPT_POST, 1);
