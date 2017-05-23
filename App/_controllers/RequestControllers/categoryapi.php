@@ -9,7 +9,6 @@
         }
 
         public function getCategory() {
-          echo "lashbdfljhasd";
           $p = $_POST;
           echo $this->model->getCategory($p);
         }
