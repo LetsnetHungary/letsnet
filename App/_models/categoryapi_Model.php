@@ -20,6 +20,6 @@
 
       $api_output = curl_exec ($ch);
       curl_close($ch);
-      return ($api_output);
+      print_r($api_output);
     }
   }
