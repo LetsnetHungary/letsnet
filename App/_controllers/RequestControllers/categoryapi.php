@@ -10,6 +10,6 @@
 
         public function getCategory() {
           $p = $_POST;
-          $this->model->getCategory($p);
+          echo $this->model->getCategory($p);
         }
     }
