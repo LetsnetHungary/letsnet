@@ -19,7 +19,7 @@ $(function() {
     var self = $(this);
     console.log('asd')
     $.ajax({
-        url: "../categoryapi/getCategories",
+        url: "../categoryapi/getCategory",
         type: "post",
         data: {
           "id" : self.data('id')
