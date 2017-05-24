@@ -17,7 +17,13 @@ $(function() {
   }
   $('#cat_btn_holder').on('click', 'li', function(e) {
     var self = $(this);
-    console.log('asd')
+    ind = self.index();
+    $('#products_holder').data('id', self.data('id'));
+    $('#cat_btn_holder').find('li').each(function(index, elem) {
+      if(index > ind) {
+        $(this).remove();
+      }
+    });
     $.ajax({
         url: "../categoryapi/getCategory",
         type: "post",

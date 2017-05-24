@@ -33,6 +33,11 @@
 flex-direction: column;
 }
 
+.label_holder {
+  position: relative;
+  padding: 3px;
+}
+
 .prod_props {
     margin: 30px 0;
 }
@@ -73,11 +78,13 @@ flex-direction: column;
 .prod_img_close {
   width: 20px;
   height: 20px;
+  cursor: pointer;
   background-image: url('../../../assets/images/icons/close.png');
   background-size: 100% 100%;
   top: 0;
   right: 0;
   position: absolute;
+  z-index: 2;
 }
 
 .prod_img_close:hover {
@@ -119,6 +126,7 @@ button.selected, a.selected {
 
 .one_category_holder {
   margin: 15px 0;
+  position: relative;
   display: flex;
   justify-content: flex-start;
   align-items: center;

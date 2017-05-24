@@ -2,7 +2,8 @@
 <script type="text/javascript" src="../../_assets/_js/Products/categories.js"></script>
 <script type="text/javascript" src="../../_assets/_js/Products/properties.js"></script>
 <script type="text/javascript" src="../../_assets/_js/Products/products.js"></script>
-<?php $sitekey = $this->sitekey; $pagemodules = $this->pageModules; $products = json_decode($this->products); $categories = json_decode($this->categories);?>
+<script type="text/javascript" src="../../_assets/_js/Products/productloader.js"></script>
+<?php $pagemodules = $this->pageModules; $products = $this->products; $categories = json_decode($this->categories);?>
 
 <div id="sb-site">
 
@@ -124,19 +125,68 @@
                 <a class="btn btn-link font-red" href="#">Címke 3</a>
                 </div>
                 -->
-                <div class="products__holder">
+                <div id="products_holder" class="products__holder">
 
-                  <?php foreach ($products as $product): ?>
-                    <div class="product_holder col-md-3">
-                        <div class="p_image_holder">
-                          <img class="product_image" src="_cms/<? echo $sitekey; ?>/_img/Products/<? echo $product->prod_id?>.jpg" alt="<? echo $product->prod_name?>">
-                        </div>
-                        <div class="p_text_holder">
-                          <span><? echo $product->prod_name?></span>
-                        </div>
-                    </div>
-                  <?php endforeach; ?>
+                  <div class="product_holder col-md-3">
+                      <div class="p_image_holder">
+                        <img class="product_image" src="_cms/graphed/_img/Products/awm3ohqql8m2x3s406rcue57v9tc1pbiglypr4k98zj7bxkisn.jpg" alt="">
+                      </div>
+                      <div class="p_text_holder">
+                        <span>Terméknév</span>
+                      </div>
+                  </div>
+                  <div class="product_holder col-md-3">
+                      <div class="p_image_holder">
+                        <img class="product_image" src="_cms/graphed/_img/Products/awm3ohqql8m2x3s406rcue57v9tc1pbiglypr4k98zj7bxkisn.jpg" alt="">
+                      </div>
+                      <div class="p_text_holder">
+                        <span>Terméknév</span>
+                      </div>
+                  </div>
+                  <div class="product_holder col-md-3">
+                      <div class="p_image_holder">
+                        <img class="product_image" src="_cms/graphed/_img/Products/awm3ohqql8m2x3s406rcue57v9tc1pbiglypr4k98zj7bxkisn.jpg" alt="">
+                      </div>
+                      <div class="p_text_holder">
+                        <span>Terméknév</span>
+                      </div>
+                  </div>
+                  <div class="product_holder col-md-3">
+                      <div class="p_image_holder">
+                        <img class="product_image" src="_cms/graphed/_img/Products/awm3ohqql8m2x3s406rcue57v9tc1pbiglypr4k98zj7bxkisn.jpg" alt="">
+                      </div>
+                      <div class="p_text_holder">
+                        <span>Terméknév</span>
+                      </div>
+                  </div>
+                  <div class="product_holder col-md-3">
+                      <div class="p_image_holder">
+                        <img class="product_image" src="_cms/graphed/_img/Products/awm3ohqql8m2x3s406rcue57v9tc1pbiglypr4k98zj7bxkisn.jpg" alt="">
+                      </div>
+                      <div class="p_text_holder">
+                        <span>Terméknév</span>
+                      </div>
+                  </div>
+                  <div class=" col-md-3 product_holder">
+                      <div class="p_image_holder">
+                        <img class="product_image" src="_cms/graphed/_img/Products/awm3ohqql8m2x3s406rcue57v9tc1pbiglypr4k98zj7bxkisn.jpg" alt="">
+                      </div>
+                      <div class="p_text_holder">
+                        <span>Terméknév</span>
+                      </div>
+                  </div>
+                  <div class="product_holder col-md-3">
+                      <div class="p_image_holder">
+                        <img class="product_image" src="_cms/graphed/_img/Products/awm3ohqql8m2x3s406rcue57v9tc1pbiglypr4k98zj7bxkisn.jpg" alt="">
+                      </div>
+                      <div class="p_text_holder">
+                        <span>Terméknév</span>
+                      </div>
+                  </div>
+
                 </div>
+                <button id="loadproducts" class="btn btn-primary opt_btn">Productok letöltése<div class="ripple-wrapper"></div></button>
+
               </div>
             </div>
           </div>
@@ -177,18 +227,6 @@
                   <div id="prod_category_holder" class="prod_category_holder">
                     <h3 class="title-hero">Kategóriák</h3>
 
-                    <div class="one_category_holder">
-                      <button class="btn ra-100 btn-default btn_cat">Karkötők<div class="ripple-wrapper"></div> <i class="glyph-icon icon-chevron-right"></i></button>
-                      <button class="btn ra-100 btn-default btn_cat">Knotaclat<div class="ripple-wrapper"></div> <i class="glyph-icon icon-chevron-right"></i></button>
-                      <button class="btn ra-100 btn-default btn_cat">Karkötők<div class="ripple-wrapper"></div> <i class="glyph-icon icon-chevron-right"></i></button>
-                      <button class="btn ra-100 btn-default btn_cat">Karkötők<div class="ripple-wrapper"></div> <i class="glyph-icon icon-chevron-right"></i></button>
-                    </div>
-
-                    <div class="one_category_holder">
-                      <button class="btn ra-100 btn-default btn_cat">Karkötők<div class="ripple-wrapper"></div> <i class="glyph-icon icon-chevron-right"></i></button>
-                      <button class="btn ra-100 btn-default btn_cat">Knotaclat<div class="ripple-wrapper"></div> <i class="glyph-icon icon-chevron-right"></i></button>
-                      <button class="btn ra-100 btn-default btn_cat">Karkötők<div class="ripple-wrapper"></div> <i class="glyph-icon icon-chevron-right"></i></button>
-                    </div>
                   </div>
                   <a id="addgroup" href="#" class="btn btn-primary popover-button-default pluscategory btn-sm" title="" data-placement="left" data-original-title="Kategória csoport hozzáadása">
                           + kategória csoport hozzáadása
@@ -198,22 +236,13 @@
                     <h3 class="title-hero">Címkék</h3>
 
                     <div id="prod_label_holder" class="prod_props_holder">
-                      <a class="btn btn-link font-red" href="#">Piros</a>
-                      <a class="btn btn-link font-red" href="#">Szövet</a>
-                      <a class="btn btn-link font-red" href="#">Literes</a>
-                      <a class="btn btn-link font-red" href="#">Piros</a>
-                      <a class="btn btn-link font-red" href="#">Szövet</a>
-                      <a class="btn btn-link font-red" href="#">Literes</a>
-                      <a class="btn btn-link font-red" href="#">Piros</a>
-                      <a class="btn btn-link font-red" href="#">Szövet</a>
-                      <a class="btn btn-link font-red" href="#">Literes</a>
-                      <a class="btn btn-link font-red" href="#">Piros</a>
-                      <a class="btn btn-link font-red" href="#">Szövet</a>
-                      <a class="btn btn-link font-red" href="#">Literes</a>
                     </div>
 
                     <a id="addlabel" href="#" class="btn btn-primary popover-button-default pluscategory btn-sm" title="" data-placement="left" data-original-title="Címke hozzáadása">
                             + címke hozzáadása
+                        <div class="ripple-wrapper"></div></a>
+                    <a style="margin-top: 10px;" id="editlabels" data-type="0" href="#" class="btn btn-primary btn-sm" title="" >
+                            címkék törlése
                         <div class="ripple-wrapper"></div></a>
                   </div>
 

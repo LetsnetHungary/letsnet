@@ -1,3 +1,10 @@
+function generateID() {
+  var S4 = function() {
+       return (((1+Math.random())*0x10000)|0).toString(32).substring(1);
+    };
+    return (S4()+S4()+S4());
+}
+
 $(function() {
   $(document).on('click', function(e) {
   if (typeof $(e.target).data('original-title') == 'undefined' &&
@@ -15,11 +22,23 @@ $(function() {
   });
   $('body').on('click', '#addnewlabel', function(){
     if($('#newlabel').val() != '') {
-      var elem = $('<a class="btn selected font-red">' +
-      $('#newlabel').val() +'</a>');
+      var elem = $('<div class="label_holder"><img style="display:none" class="prod_img_close"><a data-id="' +
+      generateID() + '" class="btn selected font-red">' +
+      $('#newlabel').val() +'</a></div>');
       $('#prod_label_holder').append(elem);
     }
     $('#addlabel').click();
+  });
+  $('#editlabels').click(function() {
+    if($(this).data('type') == 0) {
+      $(this).data('type', 1);
+      $(this).html('kész');
+      $('#prod_label_holder').find('div > img').show();
+    } else {
+      $(this).data('type', 0);
+      $(this).html('címkék törlése');
+      $('#prod_label_holder').find('div > img').hide();
+    }
   });
   $('body').on('keyup', '#newlabel', function(e) {
     if(e.which == 13) {
@@ -34,8 +53,9 @@ $(function() {
   $('body').on('click', '#addnewproperty', function(){
     var elem;
     if($('#newproperty').val() != '') {
-      var s = `<li class="one_property_holder">
-        <img class="prod_img_close">
+      var s = `<li class="one_property_holder" data-id="`
+      + generateID() +`">
+      <img class="prod_img_close">
         <p>`+ $('#newproperty').val() +`</p>
         <input type="text" class="form-control added_prop_input" id="" placeholder="`+ $('#newproperty').val() +`">
       </li>`;
@@ -56,11 +76,12 @@ $(function() {
   </div>`;
   $('#addgroup').data('content', e);
   $('body').on('click', '#addnewgroup', function(){
-    var group = $(`<div class="one_category_holder"></div>`);
+    var group = $(`<div class="one_category_holder"><img class="prod_img_close"></div>`);
     num = 0;
     $('#popup_category').find('input').each(function() {
       if($(this).val().length > 0) {
-        elem = $(`<button class="btn_cat btn ra-100 btn-default">`
+        elem = $(`<button data-id="`
+        + generateID() + `" class="btn_cat btn ra-100 btn-default">`
         + $(this).val() +
         `<div class="ripple-wrapper"></div> <i class="glyph-icon icon-chevron-right"></i></button>`);
         group.append(elem);

@@ -8,21 +8,24 @@ $(function() {
     product.outofstock = $("#stock")[0].checked;
     categories = new Array();
     $('.one_category_holder').each(function() {
-      cat = new Array();
+      cat = new Object();
       $(this).find('button').each(function() {
-        cat.push($(this).text());
+        cat[$(this).data('id')] = $(this).text();
       });
-      if(cat.length > 0) {categories.push(cat.slice());}
+      categories.push($.extend(true, {}, cat));
     });
     product.categories = categories.slice();
-    labels = new Array();
+    labels = new Object();
     $('#prod_label_holder').find('.selected').each(function() {
-      labels.push($(this).text());
+      labels[$(this).data('id')] = $(this).text();
     });
-    product.labels = labels.slice();
+    product.labels = $.extend(true, {}, labels);
     properties = new Object();
     $('.one_property_holder').each(function() {
-      properties[$(this).find('p').text()] = $(this).find('input').val();
+      prop = new Object();
+      prop.name = $(this).find('p').text();
+      prop.value = $(this).find('input').val();
+      properties[$(this).data('id')] = $.extend(true, {}, prop);
     });
     product.properties = $.extend(true, {}, properties);
     if($('#prod_btn_modify').data('type') !== 0) {
