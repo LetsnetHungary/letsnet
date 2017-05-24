@@ -4,6 +4,7 @@
 			parent::__construct(__CLASS__);
 
 			$this->a->userShouldChangeLocation("../AuthTest");
+			$this->model = $this->loadModel(__CLASS__);
 
 			// User data / modules with USERHANDLER object (CoreApp Controller) necessary for every ViewController load
 			$userHandler = new CoreApp\Controller\UserHandler();
@@ -15,6 +16,12 @@
 			$this->v->userData = $userData;
 			$this->v->userModules = $userModules;
 			$this->v->pageModules = $pageModules;
+			$this->getFirstPack();
+		}
+
+		public function getFirstPack() {
+			$this->v->categories = $this->model->getFirstCategories();
+			$this->v->products = $this->model->getProductsByCategory("all");
 		}
 
 		/*

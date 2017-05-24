@@ -2,7 +2,7 @@
 <script type="text/javascript" src="../../_assets/_js/Products/categories.js"></script>
 <script type="text/javascript" src="../../_assets/_js/Products/properties.js"></script>
 <script type="text/javascript" src="../../_assets/_js/Products/products.js"></script>
-<?php $pagemodules = $this->pageModules; ?>
+<?php $pagemodules = $this->pageModules; $products = $this->products; $categories = $this->categories; ?>
 
 <div id="sb-site">
 
