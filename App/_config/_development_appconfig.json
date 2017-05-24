@@ -7,12 +7,12 @@
       "DB_NAME" : "mvc",
       "DB_USER" : "root",
       "DB_PASS" : "mysql"
-    }
-    ,
+    },
     "visitorsDB" : "mvc_Visitors",
     "autchenticationDB" : "letsneth_authenticate",
     "modulesDB" : "letsneth_modules",
-    "dataDB" : "letsneth_data"
+    "dataDB" : "letsneth_data",
+    "notificationDB" : "letsneth_notification"
   },
   "timezone" : "Europe/Budapest",
   "firstpage" : "AuthTest",
