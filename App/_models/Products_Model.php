@@ -22,9 +22,7 @@
 
         public function getProductsByCategory($category) {
           $position = 0;
-
           $sitekey = CoreApp\Session::get("sitekey");
-
           $ch = curl_init();
           curl_setopt($ch, CURLOPT_URL,"http://a.$sitekey".CoreApp\ServerHandler::curlEnding()."/productsapi/getProductsByCategory");
           curl_setopt($ch, CURLOPT_POST, 1);

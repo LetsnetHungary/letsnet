@@ -16,6 +16,7 @@
 			$this->v->userData = $userData;
 			$this->v->userModules = $userModules;
 			$this->v->pageModules = $pageModules;
+			$this->v->sitekey = CoreApp\Session::get("sitekey");
 			$this->getFirstPack();
 		}
 
