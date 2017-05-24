@@ -9,7 +9,6 @@
         }
 
         public function a() {
-          //ez az amit kívülről eléregister_tick_function
-          $this->model->functionname();
+          echo($this->model->lekeres());
         }
     }
