@@ -2,7 +2,7 @@
 <script type="text/javascript" src="../../_assets/_js/Products/categories.js"></script>
 <script type="text/javascript" src="../../_assets/_js/Products/properties.js"></script>
 <script type="text/javascript" src="../../_assets/_js/Products/products.js"></script>
-<?php $pagemodules = $this->pageModules; $products = $this->products; $categories = $this->categories; ?>
+<?php $pagemodules = $this->pageModules; $products = $this->products; $categories = json_decode($this->categories);?>
 
 <div id="sb-site">
 
@@ -109,19 +109,79 @@
               <div class="panel-body">
                 <div id="cat_btn_holder" class="category_btn_holder">
                   <div class="btn-group cat_button">
-                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Kategóriák<span class="caret"></span><div class="ripple-wrapper"></div></button>
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><?php echo $categories->name; ?><span class="caret"></span><div class="ripple-wrapper"></div></button>
                     <ul class="dropdown-menu" role="menu">
-                        <li data-id="taska"><a>Táska</a></li>
-                        <li data-id="nadrag"><a>Nadrág</a></li>
+                    <?php foreach ($categories->subcats as $key => $value): ?>
+                      <li data-id="<? echo $key;?>"><a><? echo $value;?></a></li>
+                    <?php endforeach; ?>
                     </ul>
                   </div>
                 </div>
+                <!--
                 <div class="littlecategory__holder title-hero">
-                  <a class="btn btn-link font-red" href="#">Címke 1</a>
-                  <a class="btn btn-link font-red" href="#">Címke 2</a>
-                  <a class="btn btn-link font-red" href="#">Címke 3</a>
+                <a class="btn btn-link font-red" href="#">Címke 1</a>
+                <a class="btn btn-link font-red" href="#">Címke 2</a>
+                <a class="btn btn-link font-red" href="#">Címke 3</a>
                 </div>
+                -->
                 <div class="products__holder">
+
+                  <div class="product_holder col-md-3">
+                      <div class="p_image_holder">
+                        <img class="product_image" src="_cms/graphed/_img/Products/awm3ohqql8m2x3s406rcue57v9tc1pbiglypr4k98zj7bxkisn.jpg" alt="">
+                      </div>
+                      <div class="p_text_holder">
+                        <span>Terméknév</span>
+                      </div>
+                  </div>
+                  <div class="product_holder col-md-3">
+                      <div class="p_image_holder">
+                        <img class="product_image" src="_cms/graphed/_img/Products/awm3ohqql8m2x3s406rcue57v9tc1pbiglypr4k98zj7bxkisn.jpg" alt="">
+                      </div>
+                      <div class="p_text_holder">
+                        <span>Terméknév</span>
+                      </div>
+                  </div>
+                  <div class="product_holder col-md-3">
+                      <div class="p_image_holder">
+                        <img class="product_image" src="_cms/graphed/_img/Products/awm3ohqql8m2x3s406rcue57v9tc1pbiglypr4k98zj7bxkisn.jpg" alt="">
+                      </div>
+                      <div class="p_text_holder">
+                        <span>Terméknév</span>
+                      </div>
+                  </div>
+                  <div class="product_holder col-md-3">
+                      <div class="p_image_holder">
+                        <img class="product_image" src="_cms/graphed/_img/Products/awm3ohqql8m2x3s406rcue57v9tc1pbiglypr4k98zj7bxkisn.jpg" alt="">
+                      </div>
+                      <div class="p_text_holder">
+                        <span>Terméknév</span>
+                      </div>
+                  </div>
+                  <div class="product_holder col-md-3">
+                      <div class="p_image_holder">
+                        <img class="product_image" src="_cms/graphed/_img/Products/awm3ohqql8m2x3s406rcue57v9tc1pbiglypr4k98zj7bxkisn.jpg" alt="">
+                      </div>
+                      <div class="p_text_holder">
+                        <span>Terméknév</span>
+                      </div>
+                  </div>
+                  <div class=" col-md-3 product_holder">
+                      <div class="p_image_holder">
+                        <img class="product_image" src="_cms/graphed/_img/Products/awm3ohqql8m2x3s406rcue57v9tc1pbiglypr4k98zj7bxkisn.jpg" alt="">
+                      </div>
+                      <div class="p_text_holder">
+                        <span>Terméknév</span>
+                      </div>
+                  </div>
+                  <div class="product_holder col-md-3">
+                      <div class="p_image_holder">
+                        <img class="product_image" src="_cms/graphed/_img/Products/awm3ohqql8m2x3s406rcue57v9tc1pbiglypr4k98zj7bxkisn.jpg" alt="">
+                      </div>
+                      <div class="p_text_holder">
+                        <span>Terméknév</span>
+                      </div>
+                  </div>
 
                 </div>
               </div>

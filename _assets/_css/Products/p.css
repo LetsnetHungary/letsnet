@@ -12,11 +12,6 @@
   margin-top: 10px;
 }
 
-.products__holder {
-  width: 100%;
-  min-height: 300px;
-}
-
 .main_prop_holder {
   margin-top: 30px;
 }
@@ -195,4 +190,31 @@ button.selected, a.selected {
 
 .delete_prod_holder {
   margin: 12.5px;
+}
+
+.products__holder {
+  width: 100%;
+  min-height: 300px;
+  margin: 60px 0;
+}
+
+.p_image_holder {
+  max-height: 180px;
+  max-width: 180px;
+}
+
+.product_image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.product_holder {
+  border: 1px solid black;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.p_text_holder {
+
 }
