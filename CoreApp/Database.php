@@ -17,8 +17,7 @@ use \PDO;
 			if($this->PDO == null)
 			{
 				$this->config->DB_NAME = !empty($db) ? $db : $this->config->DB_NAME;
-				$pdo = $this->config->DB_TYPE.":host=". $this->config->DB_HOST.";port=.".$this->config->DB_PORT.";dbname=".$this->config->DB_NAME;
-
+				$pdo = $this->config->DB_TYPE.":host=". $this->config->DB_HOST.";port=".$this->config->DB_PORT.";dbname=".$this->config->DB_NAME;
 				try {
 					$this->PDO = new \PDO($pdo, $this->config->DB_USER, $this->config->DB_PASS);
 					$this->PDO->exec("set names utf8");
