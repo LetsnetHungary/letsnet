@@ -43,4 +43,23 @@
 
       return $api_output;
     }
+
+    public function uploadProduct($product) {
+      $sitekey = CoreApp\Session::get("sitekey");
+      $product = $p["product"];
+
+      $ch = curl_init();
+      curl_setopt($ch, CURLOPT_URL,"http://a.$sitekey".CoreApp\ServerHandler::curlEnding()."/productsapi/uploadProduct");
+      curl_setopt($ch, CURLOPT_POST, 1);
+
+        curl_setopt($ch, CURLOPT_POSTFIELDS,
+                  http_build_query(array('product' => $product)));
+
+      curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+      $api_output = curl_exec ($ch);
+      curl_close ($ch);
+
+      print_r($api_output);
+    }
   }

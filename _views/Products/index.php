@@ -3,7 +3,7 @@
 <script type="text/javascript" src="../../_assets/_js/Products/properties.js"></script>
 <script type="text/javascript" src="../../_assets/_js/Products/products.js"></script>
 <script type="text/javascript" src="../../_assets/_js/Products/productloader.js"></script>
-<?php $pagemodules = $this->pageModules; $products = $this->products; $categories = json_decode($this->categories);?>
+<?php $sitekey = $this->sitekey; $pagemodules = $this->pageModules; $products = json_decode($this->products); $categories = json_decode($this->categories); ?>
 
 <div id="sb-site">
 
@@ -127,63 +127,16 @@
                 -->
                 <div id="products_holder" class="products__holder">
 
-                  <div class="product_holder col-md-3">
-                      <div class="p_image_holder">
-                        <img class="product_image" src="_cms/graphed/_img/Products/awm3ohqql8m2x3s406rcue57v9tc1pbiglypr4k98zj7bxkisn.jpg" alt="">
-                      </div>
-                      <div class="p_text_holder">
-                        <span>Terméknév</span>
-                      </div>
-                  </div>
-                  <div class="product_holder col-md-3">
-                      <div class="p_image_holder">
-                        <img class="product_image" src="_cms/graphed/_img/Products/awm3ohqql8m2x3s406rcue57v9tc1pbiglypr4k98zj7bxkisn.jpg" alt="">
-                      </div>
-                      <div class="p_text_holder">
-                        <span>Terméknév</span>
-                      </div>
-                  </div>
-                  <div class="product_holder col-md-3">
-                      <div class="p_image_holder">
-                        <img class="product_image" src="_cms/graphed/_img/Products/awm3ohqql8m2x3s406rcue57v9tc1pbiglypr4k98zj7bxkisn.jpg" alt="">
-                      </div>
-                      <div class="p_text_holder">
-                        <span>Terméknév</span>
-                      </div>
-                  </div>
-                  <div class="product_holder col-md-3">
-                      <div class="p_image_holder">
-                        <img class="product_image" src="_cms/graphed/_img/Products/awm3ohqql8m2x3s406rcue57v9tc1pbiglypr4k98zj7bxkisn.jpg" alt="">
-                      </div>
-                      <div class="p_text_holder">
-                        <span>Terméknév</span>
-                      </div>
-                  </div>
-                  <div class="product_holder col-md-3">
-                      <div class="p_image_holder">
-                        <img class="product_image" src="_cms/graphed/_img/Products/awm3ohqql8m2x3s406rcue57v9tc1pbiglypr4k98zj7bxkisn.jpg" alt="">
-                      </div>
-                      <div class="p_text_holder">
-                        <span>Terméknév</span>
-                      </div>
-                  </div>
-                  <div class=" col-md-3 product_holder">
-                      <div class="p_image_holder">
-                        <img class="product_image" src="_cms/graphed/_img/Products/awm3ohqql8m2x3s406rcue57v9tc1pbiglypr4k98zj7bxkisn.jpg" alt="">
-                      </div>
-                      <div class="p_text_holder">
-                        <span>Terméknév</span>
-                      </div>
-                  </div>
-                  <div class="product_holder col-md-3">
-                      <div class="p_image_holder">
-                        <img class="product_image" src="_cms/graphed/_img/Products/awm3ohqql8m2x3s406rcue57v9tc1pbiglypr4k98zj7bxkisn.jpg" alt="">
-                      </div>
-                      <div class="p_text_holder">
-                        <span>Terméknév</span>
-                      </div>
-                  </div>
-
+                  <?php foreach ($products as $key => $value): ?>
+                    <div class="product_holder col-md-3">
+                        <div class="p_image_holder">
+                          <img class="product_image" src="_cms/<? echo $sitekey; ?>/_img/Products/<?php echo $value->prod_id; ?>.jpg" alt="<?php echo $value->prod_name; ?>">
+                        </div>
+                        <div class="p_text_holder">
+                          <span><?php echo $value->prod_name; ?></span>
+                        </div>
+                    </div>
+                  <?php endforeach; ?>
                 </div>
                 <button id="loadproducts" class="btn btn-primary opt_btn">Productok letöltése<div class="ripple-wrapper"></div></button>
 
