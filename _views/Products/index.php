@@ -255,7 +255,7 @@
                         <div class="ripple-wrapper"></div></a>
                   </div>
 
-                  <div class="image_holder">
+                  <div id="image_holder" class="image_holder">
                     <h3 class="title-hero">Termék képek</h3>
                     <ul id="prod_img_holder" style="display: none;" class="prod_img_holder"></ul>
                     <div id="prod_carousel" class="carousel prod_carousel" data-ride="carousel">
