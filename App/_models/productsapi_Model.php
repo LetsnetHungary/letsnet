@@ -27,7 +27,7 @@
 
     public function getOneProduct($p) {
       $sitekey = CoreApp\Session::get("sitekey");
-      $prod_id = "jz7iesb4n8okr251wf3iypkshlutvmnq9mfhpcy9g7voag0z2u";//$p["id"];
+      $prod_id = $p["id"];
 
       $ch = curl_init();
       curl_setopt($ch, CURLOPT_URL,"http://a.$sitekey".CoreApp\ServerHandler::curlEnding()."/productsapi/getOneProduct");
