@@ -7,7 +7,7 @@ require_once("vendor/autoload.php");
 
 define("APPCONFIG", "development");
 // 'letsnet', 'serverlocal', 'fkinglocal'
-define("SERVER", "fkinglocal");
+define("SERVER", "serverlocal");
 
 CoreApp\ServerHandler::sitekey();
 
