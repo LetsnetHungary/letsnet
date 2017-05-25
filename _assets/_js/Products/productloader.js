@@ -1,5 +1,6 @@
 function loadProducts() {
   numloaded = $('#products_holder > .product_holder').length;
+  console.log(numloaded)
   $.ajax({
       url: "../productsapi/getProductsByCategory",
       type: "post",
@@ -9,15 +10,17 @@ function loadProducts() {
       },
       datatype: 'json',
       success: function(data){
+        console.log(data)
         obj = $.parseJSON(data);
         addProducts(obj)
       },
       error: function(data) {
+        console.log(data)
       }
   });
 }
 function addProducts(obj) {
-  $.each(obj.products, function(index, product){
+  $.each(obj, function(index, product){
     m = `<div data-id="` + product.prod_id + `" class="product_holder col-md-3">
         <div class="p_image_holder">
           <img class="product_image" src="_cms/graphed/_img/Products/`
@@ -64,16 +67,17 @@ $(function() {
   $('#loadproducts').on('click', function() {
     loadProducts();
   });
-  $('.product_holder').on('click', function() {
+  $('#products_holder').on('click', '.product_holder', function() {
     self = $(this)
     $.ajax({
         url: "../productsapi/getOneProduct",
         type: "post",
         data: {
-          "id" : self.data('id'),
+          "id" : self.data('id')
         },
         datatype: 'json',
         success: function(data){
+          console.log(data)
           obj = $.parseJSON(data);
           loadProductOptions(obj)
         },
