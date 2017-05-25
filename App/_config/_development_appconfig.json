@@ -11,7 +11,7 @@
     "autchenticationDB" : "letsneth_authenticate",
     "modulesDB" : "letsneth_modules",
     "dataDB" : "letsneth_data",
-    "notificationDB" : "letsneth_notification"
+    "notificationDB" : "noti"
   },
   "timezone" : "Europe/Budapest",
   "firstpage" : "AuthTest",

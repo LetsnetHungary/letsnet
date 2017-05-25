@@ -12,4 +12,9 @@
           $p = $_POST;
           echo $this->model->getProductsByCategory($p);
         }
+
+        public function getOneProduct() {
+          $p = $_POST;
+          echo $this->model->getOneProduct($p);
+        }
     }
