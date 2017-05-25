@@ -10,7 +10,6 @@
 
         public function getProductsByCategory() {
           $p = $_POST;
-          $p["id"] = "all";
           echo $this->model->getProductsByCategory($p);
         }
 

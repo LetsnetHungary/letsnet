@@ -20,7 +20,8 @@
           return $api_output;
         }
 
-        public function getProductsByCategory($category) {
+        public function getProductsByCategory() {
+          $category = "all";
           $position = 0;
           $sitekey = CoreApp\Session::get("sitekey");
           $ch = curl_init();
