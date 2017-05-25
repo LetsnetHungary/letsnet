@@ -128,7 +128,7 @@
                 <div id="products_holder" class="products__holder">
 
                   <?php foreach ($products as $key => $value): ?>
-                    <div class="product_holder col-md-3">
+                    <div data-id = "<? echo $key; ?>" class="product_holder col-md-3">
                         <div class="p_image_holder">
                           <img class="product_image" src="_cms/<? echo $sitekey; ?>/_img/Products/<?php echo $value->prod_id; ?>.jpg" alt="<?php echo $value->prod_name; ?>">
                         </div>
