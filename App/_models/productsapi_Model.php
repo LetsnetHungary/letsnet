@@ -22,9 +22,25 @@
 
       $api_output = curl_exec ($ch);
       curl_close ($ch);
+      return $api_output;
+    }
 
-      print_r($api_output);
-      die();
+    public function getOneProduct($p) {
+      $sitekey = CoreApp\Session::get("sitekey");
+      $prod_id = $p["id"];
+
+      $ch = curl_init();
+      curl_setopt($ch, CURLOPT_URL,"http://a.$sitekey".CoreApp\ServerHandler::curlEnding()."/productsapi/getOneProduct");
+      curl_setopt($ch, CURLOPT_POST, 1);
+
+        curl_setopt($ch, CURLOPT_POSTFIELDS,
+                  http_build_query(array('prod_id' => $prod_id)));
+
+      curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+      $api_output = curl_exec ($ch);
+      curl_close ($ch);
+
       return $api_output;
     }
   }
