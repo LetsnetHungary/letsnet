@@ -136,7 +136,7 @@ $(function() {
         },
         datatype: 'json',
         success: function(data){
-          if(data[0] == '<') {
+          if(data[0] == '<' || data.indexOf('"name":null') !== -1) {
             createEmptySideCategory(self.data('id'));
           } else {
             obj = $.parseJSON(data);
