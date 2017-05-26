@@ -89,10 +89,11 @@ $(function() {
     console.log(JSON.stringify(holder))
     $.ajax({
           type        : 'POST',
-          url         : '../prodapi/itemchange',
+          url         : '../productsapi/newItem',
           data        : holder,
           encode          : true,
           success: function(result){
+            console.log(result)
             console.log(result);
             clearProduct();
           },
