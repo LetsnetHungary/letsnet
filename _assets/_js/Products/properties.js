@@ -141,7 +141,8 @@ $(function() {
             console.log('empty')
           } else {
             obj = $.parseJSON(data);
-            console.log('parsed: ' + obj.name + ',' + obj.subcats);
+            console.log('parsed: ' + obj.name);
+            console.log(obj.subcats)
             createSideCategory(obj.name, obj.subcats, self.data('id'));
           }
         },
