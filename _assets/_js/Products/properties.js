@@ -15,7 +15,7 @@ function createSideCategory(name, subcats, id) {
   }
   maincat.find('ul').append($('<li class="add_sidecat_li"><a style="font-weight: 800;">Új hozzáadása</a></li>'));
   $('#sidecat_btn_holder').append(maincat);
-  maincat.find('li').eq(0).click();
+  //maincat.find('li').eq(0).click();
 }
 function createEmptySideCategory(id) {
   maincat = $(`
@@ -138,8 +138,10 @@ $(function() {
         success: function(data){
           if(data[0] == '<' || data.indexOf('"name":null') !== -1) {
             createEmptySideCategory(self.data('id'));
+            console.log('empty')
           } else {
             obj = $.parseJSON(data);
+            console.log('parsed: ' + obj.name + ',' + obj.subcats);
             createSideCategory(obj.name, obj.subcats, self.data('id'));
           }
         },
