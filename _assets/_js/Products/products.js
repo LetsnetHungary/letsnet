@@ -89,7 +89,7 @@ $(function() {
     console.log(JSON.stringify(holder))
     $.ajax({
           type        : 'POST',
-          url         : '../productsapi/newItem',
+          url         : '../productsapi/uploadProduct',
           data        : holder,
           encode          : true,
           success: function(result){
