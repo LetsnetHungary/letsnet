@@ -9,9 +9,19 @@ $(function() {
     var reader = new FileReader();
     reader.onload = function(e) {
         var text = e.target.result;
-        var elem = $('<li class="prod_img_wrapper"><img class="prod_img" src="' +
-        text + '"><img class="prod_img_close"></li>');
-        $('#prod_img_holder').append(elem);
+        var img = new Image();
+        img.onload = function() {
+          var canvas = $('<canvas width="500" height="500" style="display: none;"></canvas>');
+          var ctx = canvas[0].getContext('2d');
+          ctx.fillStyle = 'white';
+          ctx.fillRect(0, 0, 500, 500);
+          ctx.drawImage(this, 0, 0, 500, 500);
+          var dataurl = canvas[0].toDataURL('image/jpeg');
+          var elem = $('<li class="prod_img_wrapper"><img class="prod_img" src="' +
+          dataurl + '"><img class="prod_img_close"></li>');
+          $('#prod_img_holder').append(elem);
+        }
+        img.src = text;
     }
     reader.readAsDataURL(file);
   }

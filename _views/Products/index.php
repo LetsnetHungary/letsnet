@@ -110,8 +110,8 @@
               <div class="panel-body">
                 <div id="cat_btn_holder" class="category_btn_holder">
                   <div class="btn-group cat_button">
-                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><?php echo $categories->name; ?><span class="caret"></span><div class="ripple-wrapper"></div></button>
-                    <ul class="dropdown-menu" role="menu">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Minden termék<span class="caret"></span><div class="ripple-wrapper"></div></button>
+                    <ul id="maincatlist" class="dropdown-menu" role="menu">
                     <?php foreach ($categories->subcats as $key => $value): ?>
                       <li data-id="<? echo $key;?>"><a><? echo $value;?></a></li>
                     <?php endforeach; ?>
@@ -125,8 +125,7 @@
                 <a class="btn btn-link font-red" href="#">Címke 3</a>
                 </div>
                 -->
-                <div id="products_holder" class="products__holder">
-
+                <div data-id="all" id="products_holder" class="products__holder">
                   <?php foreach ($products as $key => $value): ?>
                     <div data-id = "<? echo $key; ?>" class="product_holder col-md-3">
                         <div class="p_image_holder">

@@ -1,6 +1,7 @@
 function loadProducts() {
   numloaded = $('#products_holder > .product_holder').length;
-  console.log(numloaded)
+  console.log('position: ' + numloaded)
+  console.log('id: ' + $('#products_holder').data('id'))
   $.ajax({
       url: "../productsapi/getProductsByCategory",
       type: "post",
@@ -38,14 +39,17 @@ function loadProductOptions(opj) {
   $('#prodid').val(obj.prod_id);
   $('#name').val(obj.prod_name);
   $('#price').val(obj.prod_price);
-  (obj.available == 1) ? $('#stock').attr('checked', false) : $('#stock').attr('checked', true);
-  for(i = 0; i < obj.categories.length; i++) {
-    cat = obj.categories[i].split('=>');
-    var group = $(`<div class="one_category_holder"><img class="prod_img_close"></div>`);
-    num = 0;
-    for(j = 1; j < cat.length; j++) {
-
+  (obj.outofstock == 1) ? $('#stock').attr('checked', false) : $('#stock').attr('checked', true);
+  for(i = 0; i<obj.categories.length; i++) {
+  group = $(`<div class="one_category_holder"><img class="prod_img_close"></div>`);
+    for(key in obj.categories[i]) {
+      elem = $(`<button data-id="`
+        + key + `" class="btn_cat btn ra-100 btn-default">`
+        + obj.categories[i][key] +
+        `<div class="ripple-wrapper"></div> <i class="glyph-icon icon-chevron-right"></i></button>`);
+      group.append(elem);
     }
+      $('#prod_category_holder').append(group);
   }
   for(key in obj.labels) {
     var elem = $('<div class="label_holder"><img style="display:none" class="prod_img_close"><a data-id="' +
@@ -77,7 +81,6 @@ $(function() {
         },
         datatype: 'json',
         success: function(data){
-          console.log(data)
           obj = $.parseJSON(data);
           loadProductOptions(obj)
         },

@@ -94,7 +94,7 @@ $(function() {
           encode      : true,
           success: function(result){
             console.log(result);
-            clearProduct();
+            //clearProduct();
           },
           error: function(xhr, status, error){
           }

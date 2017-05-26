@@ -17,9 +17,11 @@ $(function() {
   }
   $('#cat_btn_holder').on('click', 'li', function(e) {
     var self = $(this);
-    ind = self.index();
+    self.parent().siblings('button').text(self.text());
+    console.log(self.parent().siblings('button'));
+    ind = self.parent().parent().index();
     $('#products_holder').data('id', self.data('id'));
-    $('#cat_btn_holder').find('li').each(function(index, elem) {
+    $('#cat_btn_holder').find('.btn-group').each(function(index, elem) {
       if(index > ind) {
         $(this).remove();
       }

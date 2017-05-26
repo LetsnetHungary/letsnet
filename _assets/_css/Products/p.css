@@ -224,6 +224,17 @@ button.selected, a.selected {
   cursor: pointer;
 }
 
-.p_text_holder {
+.sidecat_button {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+}
 
+.sidecat_input {
+  margin-top: 12.5px;
+  display: none;
+}
+
+#addnewcategory {
+  display: none;
 }
