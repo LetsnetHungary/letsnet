@@ -44,7 +44,7 @@
       return $api_output;
     }
 
-    public function uploadProduct($product) {
+    public function uploadProduct($p) {
       $sitekey = CoreApp\Session::get("sitekey");
       $product = $p["product"];
 

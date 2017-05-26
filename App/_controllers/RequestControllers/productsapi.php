@@ -20,6 +20,6 @@
 
         public function uploadProduct() {
           $p = $_POST;
-          echo $this->model->uploadProduct($p);
+          $this->model->uploadProduct($p);
         }
     }

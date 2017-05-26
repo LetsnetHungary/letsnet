@@ -91,9 +91,8 @@ $(function() {
           type        : 'POST',
           url         : '../productsapi/uploadProduct',
           data        : holder,
-          encode          : true,
+          encode      : true,
           success: function(result){
-            console.log(result)
             console.log(result);
             clearProduct();
           },
