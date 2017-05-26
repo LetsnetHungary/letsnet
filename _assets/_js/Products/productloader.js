@@ -66,6 +66,29 @@ function loadProductOptions(opj) {
     elem = $(s);
     $('#properties').append(elem);
   }
+  if($('#prod_btn_modify').data('type') == 0) {
+      $('#prod_btn_modify').html('Kész');
+      $('#prod_btn_modify').data('type',1);
+      $('#prod_btn_addimg').show();
+      $('#prod_img_holder').show();
+      $('#prod_carousel').hide();
+      $('#prod_carousel').removeClass('carousel').removeClass('slide');
+      $('.carousel-indicators').empty();
+    }
+    loadImages(1);
+}
+function loadImages(ite) {
+    var src = '_cms/graphed/_img/Products/' + obj.prod_id + '/' + ite + '.jpg';
+    checkImage(src, function() {
+        var elem = $('<li class="prod_img_wrapper"><img data-type="old" class="prod_img" src="' +
+        src + '"><img class="prod_img_close"></li>');
+        $('#prod_img_holder').append(elem);
+        loadImages(ite++);
+        console.log('valid:' + src)
+    }, function() {
+      console.log('invalid: ' + src)
+      $('#prod_btn_modify').click();
+    });
 }
 $(function() {
   $('#loadproducts').on('click', function() {

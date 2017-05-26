@@ -1,3 +1,10 @@
+function checkImage(src, callback1, callback2) {
+  $('<img style="display: none" src="' + src +'">').error(function () {
+      callback2();
+    }).load(function() {
+      callback1();
+    });
+}
 $(function() {
   $('#prod_btn_addimg').click(function() {
     $('#prod_imgupload').click();
