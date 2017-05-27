@@ -104,6 +104,7 @@ $(function() {
         },
         datatype: 'json',
         success: function(data){
+          console.log(data)
           obj = $.parseJSON(data);
           loadProductOptions(obj)
         },

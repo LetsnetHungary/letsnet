@@ -3,7 +3,7 @@
 <script type="text/javascript" src="../../_assets/_js/Products/properties.js"></script>
 <script type="text/javascript" src="../../_assets/_js/Products/products.js"></script>
 <script type="text/javascript" src="../../_assets/_js/Products/productloader.js"></script>
-<?php $sitekey = $this->sitekey; $pagemodules = $this->pageModules; $products = json_decode($this->products); $categories = json_decode($this->categories); ?>
+<?php $sitekey = $this->sitekey; $pagemodules = $this->pageModules; $products = json_decode($this->products); $categories = json_decode($this->categories); $labels = json_decode($this->labels, true); $c_l = count($labels);?>
 
 <div id="sb-site">
 
@@ -188,6 +188,12 @@
                     <h3 class="title-hero">Címkék</h3>
 
                     <div id="prod_label_holder" class="prod_props_holder">
+                    <?
+                    for ($i=0; $i < $c_l; $i++) { 
+                      ?>
+                        <div class="label_holder"><img style="display:none" class="prod_img_close"><a data-id="<? echo $labels[$i]["label_id"]; ?>" class="btn font-red btn-link"><? echo $labels[$i]["label_name"]; ?></a></div>
+                      <?
+                    }?>
                     </div>
 
                     <a id="addlabel" href="#" class="btn btn-primary popover-button-default pluscategory btn-sm" title="" data-placement="left" data-original-title="Címke hozzáadása">

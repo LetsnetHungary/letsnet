@@ -23,6 +23,7 @@
 		public function getFirstPack() {
 			$this->v->categories = $this->model->getFirstCategories();
 			$this->v->products = $this->model->getProductsByCategory("all");
+			$this->v->labels = $this->model->getLabels();
 			$this->v->sitekey = CoreApp\Session::get("sitekey");
 		}
 
