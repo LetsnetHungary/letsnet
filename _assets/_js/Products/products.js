@@ -31,8 +31,8 @@ function clearProduct() {
 }
 $(function() {
   $('#add_product').click(function() {
-    var holder = new Object();
-    var product = new Object();
+    holder = new Object();
+    product = new Object();
     product.prodid = $('#prodid').val();
     product.name = $('#name').val();
     product.price = $('#price').val();

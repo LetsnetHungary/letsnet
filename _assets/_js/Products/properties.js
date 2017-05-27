@@ -8,7 +8,7 @@ function createSideCategory(name, subcats, id) {
                     </ul>
                   </div>
   `);
-  for (var id in subcats) {
+  for (id in subcats) {
     listelem = '<li class="catli" data-id="' +
     id + '"><a>' + subcats[id] +'</a></li>';
     maincat.find('ul').append(listelem);
@@ -30,7 +30,7 @@ function createEmptySideCategory(id) {
   $('#sidecat_btn_holder').append(maincat);
 }
 function generateID() {
-  var S4 = function() {
+  S4 = function() {
        return (((1+Math.random())*0x10000)|0).toString(32).substring(1);
     };
     return (S4()+S4()+S4());
@@ -43,7 +43,7 @@ $(function() {
     $('[data-original-title]').popover('hide');
   }
 });
-  var c = `<div>
+  c = `<div>
       <input id="newlabel" type="text" class="form-control prop_input" placeholder="Címke">
       <button id="addnewlabel" class="btn btn-primary btn-sm image_btn">Hozzáadás<div class="ripple-wrapper"></div></button>
   </div>`;
@@ -53,7 +53,7 @@ $(function() {
   });
   $('body').on('click', '#addnewlabel', function(){
     if($('#newlabel').val() != '') {
-      var elem = $('<div class="label_holder"><img style="display:none" class="prod_img_close"><a data-id="' +
+      elem = $('<div class="label_holder"><img style="display:none" class="prod_img_close"><a data-id="' +
       generateID() + '" class="btn selected font-red">' +
       $('#newlabel').val() +'</a></div>');
       $('#prod_label_holder').append(elem);
@@ -76,15 +76,15 @@ $(function() {
         $('#addnewlabel').click();
     }
   });
-  var d = `<div>
+  d = `<div>
       <input id="newproperty" type="text" class="form-control prop_input" placeholder="Tulajdonság neve">
       <button id="addnewproperty" class="btn btn-primary btn-sm image_btn">Hozzáadás<div class="ripple-wrapper"></div></button>
   </div>`;
   $('#addproperty').data('content', d);
   $('body').on('click', '#addnewproperty', function(){
-    var elem;
+    elem;
     if($('#newproperty').val() != '') {
-      var s = `<li class="one_property_holder" data-id="`
+      s = `<li class="one_property_holder" data-id="`
       + generateID() +`">
       <img class="prod_img_close">
         <p>`+ $('#newproperty').val() +`</p>
@@ -101,7 +101,7 @@ $(function() {
         $('#addnewproperty').click();
     }
   });
-  var f = `<div id="popup_category"><div id="sidecat_btn_holder" class="sidecategory_btn_holder">
+  f = `<div id="popup_category"><div id="sidecat_btn_holder" class="sidecategory_btn_holder">
                   <div data-id="all" class="sidecat_button dropdown">
                     <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Összes termék<span class="caret"></span><div class="ripple-wrapper"></div></button>
                     <ul id="mainsidecatlist" class="dropdown-menu sidecatlist" role="menu">
@@ -113,14 +113,14 @@ $(function() {
       <button id="addnewcategory" class="btn btn-primary image_btn">Kategória hozzáadása<div class="ripple-wrapper"></div></button>
       <button id="addnewgroup" style="margin: 5px 0 0 0;" class="btn btn-primary image_btn">Kész<div class="ripple-wrapper"></div></button>
                 </div> `;
-  var e = $(f);
+  e = $(f);
   $('#maincatlist').find('li').each(function() {
-    var self = $(this);
+    self = $(this);
     e.find('#mainsidecatlist').append(self.clone().addClass('catli'));
   });
   e.find('#mainsidecatlist').append($('<li class="add_sidecat_li"><a style="font-weight: 800;">Új hozzáadása</a></li>'));
   $('body').on('click', '.sidecatlist > .catli', function() {
-    var self = $(this);
+    self = $(this);
     self.parent().siblings('button').text(self.text());
     ind = self.parent().parent().index();
     $('#sidecat_btn_holder').find('.sidecat_button').each(function(index, elem) {
@@ -148,17 +148,17 @@ $(function() {
         }
     });
   });
-  var dom = e[0];
+  dom = e[0];
   $('#addgroup').data('content', dom);
   e = {};
   $('body').on('click', '.sidecatlist > .add_sidecat_li', function() {
-    var self = $(this);
+    self = $(this);
     $('#addnewcategory').show();
     $('.sidecat_input').css('display','block').data('parent',self.parent());
     $('.sidecat_input').select();
   });
   $('body').on('click', '#addnewgroup', function(){
-    var group = $(`<div class="one_category_holder"><img class="prod_img_close"></div>`);
+    group = $(`<div class="one_category_holder"><img class="prod_img_close"></div>`);
     num = 0;
     name = "Minden termék";
     $('#popup_category').find('.sidecat_button').each(function(index, value) {

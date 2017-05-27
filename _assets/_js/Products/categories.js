@@ -8,7 +8,7 @@ $(function() {
         </ul>
       </div>
     `);
-    for (var id in subcats) {
+    for (id in subcats) {
       listelem = '<li data-id="' +
       id + '"><a>' + subcats[id] +'</a></li>';
       maincat.find('ul').append(listelem);
@@ -16,7 +16,7 @@ $(function() {
     $('#cat_btn_holder').append(maincat);
   }
   $('#cat_btn_holder').on('click', 'li', function(e) {
-    var self = $(this);
+    self = $(this);
     self.parent().siblings('button').text(self.text());
     console.log(self.parent().siblings('button'));
     ind = self.parent().parent().index();

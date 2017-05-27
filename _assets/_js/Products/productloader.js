@@ -52,13 +52,13 @@ function loadProductOptions(opj) {
       $('#prod_category_holder').append(group);
   }
   for(key in obj.labels) {
-    var elem = $('<div class="label_holder"><img style="display:none" class="prod_img_close"><a data-id="' +
+    elem = $('<div class="label_holder"><img style="display:none" class="prod_img_close"><a data-id="' +
     key + '" class="btn selected font-red">' +
     obj.labels[key] +'</a></div>');
     $('#prod_label_holder').append(elem);
   }
   for(key in obj.properties) {
-    var s = `<li class="one_property_holder">
+    s = `<li class="one_property_holder">
     <img class="prod_img_close">
       <p>`+ key +`</p>
       <input type="text" class="form-control added_prop_input" id="" placeholder="`
@@ -78,12 +78,14 @@ function loadProductOptions(opj) {
     loadImages(1);
 }
 function loadImages(ite) {
-    var src = '_cms/graphed/_img/Products/' + obj.prod_id + '/' + ite + '.jpeg';
+  console.log(ite)
+    src = '_cms/graphed/_img/Products/' + obj.prod_id + '/' + ite + '.jpeg';
     checkImage(src, function() {
-        var elem = $('<li class="prod_img_wrapper"><img data-type="old" class="prod_img" src="' +
+        elem = $('<li class="prod_img_wrapper"><img data-type="old" class="prod_img" src="' +
         src + '"><img class="prod_img_close"></li>');
         $('#prod_img_holder').append(elem);
-        loadImages(ite++);
+        n = ite + 1
+        loadImages(n);
         console.log('valid:' + src)
     }, function() {
       console.log('invalid: ' + src)

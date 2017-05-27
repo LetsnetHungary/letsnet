@@ -13,18 +13,18 @@ $(function() {
     $(this).parent().remove();
   });
   function readFile(file) {
-    var reader = new FileReader();
+    reader = new FileReader();
     reader.onload = function(e) {
-        var text = e.target.result;
-        var img = new Image();
+        text = e.target.result;
+        img = new Image();
         img.onload = function() {
-          var canvas = $('<canvas width="500" height="500" style="display: none;"></canvas>');
-          var ctx = canvas[0].getContext('2d');
+          canvas = $('<canvas width="500" height="500" style="display: none;"></canvas>');
+          ctx = canvas[0].getContext('2d');
           ctx.fillStyle = 'white';
           ctx.fillRect(0, 0, 500, 500);
           ctx.drawImage(this, 0, 0, 500, 500);
-          var dataurl = canvas[0].toDataURL('image/jpeg');
-          var elem = $('<li class="prod_img_wrapper"><img class="prod_img" src="' +
+          dataurl = canvas[0].toDataURL('image/jpeg');
+          elem = $('<li class="prod_img_wrapper"><img class="prod_img" src="' +
           dataurl + '"><img class="prod_img_close"></li>');
           $('#prod_img_holder').append(elem);
         }
@@ -33,8 +33,8 @@ $(function() {
     reader.readAsDataURL(file);
   }
   $('#prod_imgupload').change(function() {
-    var files = this.files;
-    for (var i = 0; i < files.length; i++) {
+    files = this.files;
+    for (i = 0; i < files.length; i++) {
       readFile(files[i]);
     }
   });
@@ -47,7 +47,7 @@ $(function() {
       $('#prod_carousel').hide();
       $('#prod_carousel').removeClass('carousel').removeClass('slide');
       $('#prod_carousel').find('.prod_img').each(function(i) {
-        var elem = $('<li class="prod_img_wrapper"><img class="prod_img" src="' +
+        elem = $('<li class="prod_img_wrapper"><img class="prod_img" src="' +
         $(this).attr('src') + '"><img class="prod_img_close"></li>');
         $('#prod_img_holder').append(elem);
         $(this).parent().remove();
