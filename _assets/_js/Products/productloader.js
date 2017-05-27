@@ -79,6 +79,7 @@ function loadProductOptions(opj) {
 }
 function loadImages(ite) {
   console.log(ite)
+  if(ite <= 20) {
     src = '_cms/graphed/_img/Products/' + obj.prod_id + '/' + ite + '.jpeg';
     checkImage(src, function() {
         elem = $('<li class="prod_img_wrapper"><img data-type="old" class="prod_img" src="' +
@@ -91,6 +92,7 @@ function loadImages(ite) {
       console.log('invalid: ' + src)
       $('#prod_btn_modify').click();
     });
+  }
 }
 $(function() {
   $('#loadproducts').on('click', function() {
