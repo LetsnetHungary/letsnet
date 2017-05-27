@@ -128,6 +128,14 @@ $(function() {
         $(this).remove();
       }
     });
+    elem = $(`<div class="sidespinnerholder"><div class="spinner">
+  <div class="rect1"></div>
+  <div class="rect2"></div>
+  <div class="rect3"></div>
+  <div class="rect4"></div>
+  <div class="rect5"></div>
+</div></div>`)
+    $('#sidecat_btn_holder').append(elem);
     $.ajax({
         url: "../categoryapi/getCategory",
         type: "post",
@@ -136,6 +144,7 @@ $(function() {
         },
         datatype: 'json',
         success: function(data){
+            $('#sidecat_btn_holder').find('.sidespinnerholder').remove();
           if(data[0] == '<' || data.indexOf('"name":null') !== -1) {
             createEmptySideCategory(self.data('id'));
           } else {

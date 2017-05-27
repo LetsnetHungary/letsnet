@@ -61,7 +61,7 @@ $(function() {
       $('#prod_img_holder').hide();
       $('#prod_carousel').show();
       $('#prod_img_holder').find('li').each(function(i) {
-        $('<div class="item prod_carousel_img"><img data-type="' + $(this).data('type')
+        $('<div class="item prod_carousel_img"><img data-type="' + $(this).find('.prod_img').data('type')
         + '" class="prod_img" src="'+$(this).find('.prod_img').attr('src')+'"> </div>').appendTo('.carousel-inner');
         $('<li data-target="#prod_carousel" data-slide-to="'+i+'"></li>').appendTo('.carousel-indicators')
         $(this).remove();

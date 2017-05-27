@@ -3,7 +3,7 @@ $(function() {
     maincat = $(`
       <div class="btn-group cat_button">
         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">`
-        + name + `<span class="caret"></span><div class="ripple-wrapper"></div></button>
+        + '---' + `<span class="caret"></span><div class="ripple-wrapper"></div></button>
         <ul class="dropdown-menu" role="menu">
         </ul>
       </div>
@@ -26,6 +26,14 @@ $(function() {
         $(this).remove();
       }
     });
+    elem = $(`<div class="spinnerholder btn-group"><div class="spinner">
+  <div class="rect1"></div>
+  <div class="rect2"></div>
+  <div class="rect3"></div>
+  <div class="rect4"></div>
+  <div class="rect5"></div>
+</div></div>`)
+    $('#cat_btn_holder').append(elem);
     $.ajax({
         url: "../categoryapi/getCategory",
         type: "post",
@@ -35,6 +43,7 @@ $(function() {
         datatype: 'json',
         success: function(data){
           console.log(data)
+           $('#cat_btn_holder').find('.spinnerholder').remove();
           obj = $.parseJSON(data);
           createCategory(obj.name, obj.subcats);
         },

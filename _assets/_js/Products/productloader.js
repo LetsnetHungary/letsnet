@@ -52,10 +52,22 @@ function loadProductOptions(opj) {
       $('#prod_category_holder').append(group);
   }
   for(key in obj.labels) {
-    elem = $('<div class="label_holder"><img style="display:none" class="prod_img_close"><a data-id="' +
-    key + '" class="btn selected font-red">' +
-    obj.labels[key] +'</a></div>');
-    $('#prod_label_holder').append(elem);
+    inyet = false;
+    where = {};
+    $('#prod_label_holder').find('a').each(function() {
+      if ($(this).data('id') == key) {
+        inyet = true;
+        where = $(this)
+      }
+    })
+    if(inyet == false) {
+      elem = $('<div class="label_holder"><img style="display:none" class="prod_img_close"><a data-id="' +
+      key + '" class="btn selected font-red">' +
+      obj.labels[key] +'</a></div>');
+      $('#prod_label_holder').append(elem);
+    } else {
+      where.addClass('selected');
+    }
   }
   for(key in obj.properties) {
     s = `<li class="one_property_holder">
@@ -92,6 +104,8 @@ function loadImages(ite) {
       console.log('invalid: ' + src)
       $('#prod_btn_modify').click();
     });
+  } else {
+    $('#prod_btn_modify').click();
   }
 }
 $(function() {

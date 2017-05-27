@@ -4,7 +4,7 @@ function clearProduct() {
   $('#price').val('');
   $('#stock').attr('checked', false);
   $('#prod_category_holder > .one_category_holder').remove();
-  $('#prod_label_holder').empty();
+  //$('#prod_label_holder').empty();
   $('#properties').empty();
   $('#image_holder > div, #image_holder > ul').remove();
   if($('#prod_btn_modify').data('type') !== 0) {
