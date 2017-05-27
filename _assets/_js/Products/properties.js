@@ -3,7 +3,7 @@ function createSideCategory(name, subcats, id) {
     <div data-id="` + id
     + `" class="sidecat_button dropdown">
                     <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">`
-                    + name +`<span class="caret"></span><div class="ripple-wrapper"></div></button>
+                    + '---' +`<span class="caret"></span><div class="ripple-wrapper"></div></button>
                     <ul id="mainsidecatlist" class="dropdown-menu sidecatlist" role="menu">
                     </ul>
                   </div>
@@ -15,7 +15,7 @@ function createSideCategory(name, subcats, id) {
   }
   maincat.find('ul').append($('<li class="add_sidecat_li"><a style="font-weight: 800;">Új hozzáadása</a></li>'));
   $('#sidecat_btn_holder').append(maincat);
-  maincat.find('li').eq(0).click();
+  //maincat.find('li').eq(0).click();
 }
 function createEmptySideCategory(id) {
   maincat = $(`
