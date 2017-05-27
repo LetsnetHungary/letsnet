@@ -25,7 +25,7 @@ function addProducts(obj) {
     m = `<div data-id="` + product.prod_id + `" class="product_holder col-md-3">
         <div class="p_image_holder">
           <img class="product_image" src="_cms/graphed/_img/Products/`
-          + product.prod_id +`/1.jpg" alt="">
+          + product.prod_id +`/1.jpeg" alt="">
         </div>
         <div class="p_text_holder">
           <span>` + product.prod_name + `</span>
