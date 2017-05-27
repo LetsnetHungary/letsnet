@@ -36,6 +36,10 @@ function addProducts(obj) {
 }
 function loadProductOptions(opj) {
   clearProduct();
+  $('#options').removeClass('btn-default').addClass('btn-primary');
+  $('#newproduct').removeClass('btn-primary').addClass('btn-default');
+  $('#delete_product').show();
+  $('#prodid').show();
   $('#prodid').val(obj.prod_id);
   $('#name').val(obj.prod_name);
   $('#price').val(obj.prod_price);
@@ -94,7 +98,7 @@ function loadImages(ite) {
   if(ite <= 20) {
     src = '_cms/graphed/_img/Products/' + obj.prod_id + '/' + ite + '.jpeg';
     checkImage(src, function() {
-        elem = $('<li class="prod_img_wrapper"><img data-type="old" class="prod_img" src="' +
+        elem = $('<li class="prod_img_wrapper"><img class="prod_img" src="' +
         src + '"><img class="prod_img_close"></li>');
         $('#prod_img_holder').append(elem);
         n = ite + 1
@@ -109,6 +113,15 @@ function loadImages(ite) {
   }
 }
 $(function() {
+  $('#newproduct').on('click', function() {
+    if($('#options').hasClass('btn-primary')) {
+      clearProduct();
+      $('#newproduct').removeClass('btn-default').addClass('btn-primary');
+      $('#options').removeClass('btn-primary').addClass('btn-default');
+      $('#delete_product').hide();
+      $('#prodid').hide();
+    }
+  })
   $('#loadproducts').on('click', function() {
     loadProducts();
   });

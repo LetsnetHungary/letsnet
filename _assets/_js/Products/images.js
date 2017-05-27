@@ -47,8 +47,7 @@ $(function() {
       $('#prod_carousel').hide();
       $('#prod_carousel').removeClass('carousel').removeClass('slide');
       $('#prod_carousel').find('.prod_img').each(function(i) {
-        elem = $('<li data-type="'+
-        $(this).data('type') + '" class="prod_img_wrapper"><img class="prod_img" src="' +
+        elem = $('<li class="prod_img_wrapper"><img class="prod_img" src="' +
         $(this).attr('src') + '"><img class="prod_img_close"></li>');
         $('#prod_img_holder').append(elem);
         $(this).parent().remove();
@@ -61,8 +60,7 @@ $(function() {
       $('#prod_img_holder').hide();
       $('#prod_carousel').show();
       $('#prod_img_holder').find('li').each(function(i) {
-        $('<div class="item prod_carousel_img"><img data-type="' + $(this).find('.prod_img').data('type')
-        + '" class="prod_img" src="'+$(this).find('.prod_img').attr('src')+'"> </div>').appendTo('.carousel-inner');
+        $('<div class="item prod_carousel_img"><img class="prod_img" src="'+$(this).find('.prod_img').attr('src')+'"> </div>').appendTo('.carousel-inner');
         $('<li data-target="#prod_carousel" data-slide-to="'+i+'"></li>').appendTo('.carousel-indicators')
         $(this).remove();
       });

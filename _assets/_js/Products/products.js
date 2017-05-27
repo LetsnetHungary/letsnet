@@ -5,6 +5,9 @@ function clearProduct() {
   $('#stock').attr('checked', false);
   $('#prod_category_holder > .one_category_holder').remove();
   //$('#prod_label_holder').empty();
+  $('#prod_label_holder').find('a').each(function() {
+    $(this).removeClass('selected');
+  })
   $('#properties').empty();
   $('#image_holder > div, #image_holder > ul').remove();
   if($('#prod_btn_modify').data('type') !== 0) {
@@ -30,6 +33,8 @@ function clearProduct() {
   $( "#prod_img_holder" ).sortable().disableSelection();
 }
 $(function() {
+  $('#delete_product').hide();
+  $('#prodid').hide();
   $('#add_product').click(function() {
     holder = new Object();
     product = new Object();
@@ -72,9 +77,11 @@ $(function() {
     images = new Array();
     $('.carousel-inner').find('.item').find('img').each(function() {
       img = new Object();
-      if($(this).data('type') == 'old') {
+      if($(this).attr('src').indexOf('_cms') !== -1) {
         img.imagetype = 'old';
-        img.id = $(this).attr('src');
+        a = $(this).attr('src').replace('_cms/graphed/_img/Products/', '').replace('.jpeg', '').split('/');
+        img.prodid = a[0]
+        img.id = a[1]
       } else {
         t = $(this).attr('src').replace('data:','').replace(';', '||').replace(',','||').split('||');
         img.imagetype = 'new';

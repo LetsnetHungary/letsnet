@@ -146,8 +146,8 @@
             <div class="panel">
               <div class="panel-body">
                 <div class="title-hero opt_btn_holder">
-                  <button class="btn btn-default opt_btn">Opciók<div class="ripple-wrapper"></div></button>
-                  <button class="btn btn-primary opt_btn">Új termék<div class="ripple-wrapper"></div></button>
+                  <button id="options" class="btn btn-default opt_btn">Opciók<div class="ripple-wrapper"></div></button>
+                  <button id="newproduct" class="btn btn-primary opt_btn">Új termék<div class="ripple-wrapper"></div></button>
                 </div>
                 <div class="item_holder">
                   <div class="main_prop_holder">
