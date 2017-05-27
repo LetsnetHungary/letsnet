@@ -122,9 +122,12 @@ $(function() {
       $('#prodid').hide();
     }
   })
-  $('#loadproducts').on('click', function() {
-    loadProducts();
-  });
+  $('#products_holder').on('scroll', function() {
+      if($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) {
+          loadProducts();
+          console.log('load');
+      }
+  })
   $('#products_holder').on('click', '.product_holder', function() {
     self = $(this)
     $.ajax({

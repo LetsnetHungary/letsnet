@@ -8,12 +8,17 @@ $(function() {
         </ul>
       </div>
     `);
+    num = 0
     for (id in subcats) {
       listelem = '<li data-id="' +
       id + '"><a>' + subcats[id] +'</a></li>';
       maincat.find('ul').append(listelem);
+      num += 1
     }
-    $('#cat_btn_holder').append(maincat);
+    if(num > 0) {
+      $('#cat_btn_holder').append(maincat);
+      loadProducts();
+    }
   }
   $('#cat_btn_holder').on('click', 'li', function(e) {
     self = $(this);
@@ -46,6 +51,7 @@ $(function() {
            $('#cat_btn_holder').find('.spinnerholder').remove();
           obj = $.parseJSON(data);
           createCategory(obj.name, obj.subcats);
+          $('#products_holder > .product_holder').remove();
         },
         error: function(data) {
           console.log(data)

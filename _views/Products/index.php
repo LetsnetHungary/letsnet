@@ -137,8 +137,6 @@
                     </div>
                   <?php endforeach; ?>
                 </div>
-                <button id="loadproducts" class="btn btn-primary opt_btn">Productok letöltése<div class="ripple-wrapper"></div></button>
-
               </div>
             </div>
           </div>
