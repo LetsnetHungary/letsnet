@@ -78,7 +78,7 @@ function loadProductOptions(opj) {
     loadImages(1);
 }
 function loadImages(ite) {
-    var src = '_cms/graphed/_img/Products/' + obj.prod_id + '/' + ite + '.jpg';
+    var src = '_cms/graphed/_img/Products/' + obj.prod_id + '/' + ite + '.jpeg';
     checkImage(src, function() {
         var elem = $('<li class="prod_img_wrapper"><img data-type="old" class="prod_img" src="' +
         src + '"><img class="prod_img_close"></li>');

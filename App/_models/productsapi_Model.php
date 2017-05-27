@@ -61,5 +61,25 @@
       curl_close ($ch);
 
       print_r($api_output);
+
+      $records = $product["images"];
+      $c_r = count($records);
+
+      for ($i=0; $i < $c_r; $i++) { 
+        if($records[$i]["imagetype"] == "new") {
+          $type = explode("/", $records[$i]["type"]);
+          $src = "_cms/$sitekey/_img/Products/".$product["prodid"];
+          createDir($src);
+          $data = base64_decode($records[$i]["data"]);
+          $src = "_cms/$sitekey/_img/Products/".$product["prodid"]."/$i.$type[1]";
+          file_put_contents($src, $data);
+        }
+      }
     }
+
+    private function uploadImage($prod_id, $i) {
+      
+    }
+
+    
   }
