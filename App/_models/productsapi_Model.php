@@ -59,7 +59,7 @@
 
       $api_output = curl_exec ($ch);
       curl_close ($ch);
-
+      echo $api_output;
       $api_output = json_decode($api_output);
 
       $product["prodid"] = $api_output->prod_id;

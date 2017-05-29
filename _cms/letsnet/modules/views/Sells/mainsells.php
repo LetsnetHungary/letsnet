@@ -53,7 +53,7 @@
          for($i=0; $i < $c_sells; $i++) {
            ?>
            <tr>
-             <td class="text-center"><img style="max-height:80px;" class="image-responsive" src = "../_cms/<?php echo $sitekey; ?>/_img/Products/<?php echo $sells[$i]["prod_id"];?>.jpg" alt="<?php echo $sells[$i]["prod_id"];?>"></td>
+             <td class="text-center"><img style="max-height:80px;" class="image-responsive" src = "../_cms/<?php echo $sitekey; ?>/_img/Products/<?php echo $sells[$i]["prod_id"];?>/1.jpeg" alt="<?php echo $sells[$i]["prod_id"];?>"></td>
              <td class=""><?php echo $sells[$i]["prod_name"];?></td>
              <td class=""> <input class= "addStock" type="text" data-prodid="<?php echo $sells[$i]["prod_id"];?>" style="max-width:50px; text-align: center;" value="<?php echo $sells[$i]["stock"];?>"> </td>
              <td class=""><input class= "addWebshopStock" type="text" data-prodid="<?php echo $sells[$i]["prod_id"];?>" style="max-width:50px; text-align: center;" value="<?php echo $sells[$i]["webshopstock"];?>"></td>

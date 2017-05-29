@@ -31,7 +31,7 @@
       <div class="example-box-wrapper">
         <table id="datatable" class="table table-striped table-bordered no-wrap" cellspacing="0" width="100%">
         <tr class = "maintr">
-          <td><img class="image-responsive" src = "../_cms/<?php echo $sitekey ?>/_img/products/<?php echo $value->records[0]->prod_id;?>.jpg" style = "max-height: 100px;"></td>
+          <td><img class="image-responsive" src = "../_cms/<?php echo $sitekey ?>/_img/products/<?php echo $value->records[0]->prod_id;?>/1.jpeg" style = "max-height: 100px;"></td>
           <td><span style = "font-size: 120%;"><?php echo $value->prod_name;?></span></td>
           <td><!--<button class="btn btn-success">Új elem hozzáadása</button> --></td>
           <td><!--<button class="btn btn-primary display__button" id="<?php echo $key;?>">Eladások megjelenítése</button>--></td>
