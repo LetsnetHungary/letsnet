@@ -121,7 +121,8 @@ flex-direction: column;
 }
 
 button.selected, a.selected {
-  background-color: yellow;
+  background-color: #e91e63;
+  color: white!important;
 }
 
 .one_category_holder {

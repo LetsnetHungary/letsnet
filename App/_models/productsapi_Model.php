@@ -60,18 +60,24 @@
       $api_output = curl_exec ($ch);
       curl_close ($ch);
 
-      print_r($api_output);
+      $api_output = json_decode($api_output);
 
-      $records = $product["images"];
+      $product["prodid"] = $api_output->prod_id;
+
+      $records = isset($product["images"]) ? $product["images"] : array();
       $c_r = count($records);
-
-      if($records[0]["imagetype"] == "new") {
+      if($c_r > 0) {
+        if($records[0]["imagetype"] == "new") {
         $type = explode("/", $records[0]["type"]);
         $src = "_cms/$sitekey/_img/Products/".$product["prodid"];
+        
         createDir($src);
         $data = base64_decode($records[0]["data"]);
         $src = "_cms/$sitekey/_img/Products/".$product["prodid"]."/1.$type[1]";
+        echo $src;
         file_put_contents($src, $data);
       }
+      }
+      
     }
   }

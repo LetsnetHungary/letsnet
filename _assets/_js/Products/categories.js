@@ -48,7 +48,7 @@ $(function() {
         datatype: 'json',
         success: function(data){
           console.log(data)
-           $('#cat_btn_holder').find('.spinnerholder').remove();
+          $('#cat_btn_holder').find('.spinnerholder').remove();
           obj = $.parseJSON(data);
           createCategory(obj.name, obj.subcats);
           $('#products_holder > .product_holder').remove();
