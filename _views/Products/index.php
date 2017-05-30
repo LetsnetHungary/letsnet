@@ -217,6 +217,7 @@
                     <div id="prod_carousel" class="carousel prod_carousel" data-ride="carousel">
                       <ol class="carousel-indicators"></ol>
                       <div class="carousel-inner"></div>
+                      <!--
                       <a class="left carousel-control" href="#prod_carousel" data-slide="prev">
                         <span class="glyphicon glyphicon-chevron-left"></span>
                         <span class="sr-only">Previous</span>
@@ -224,7 +225,7 @@
                       <a class="right carousel-control" href="#prod_carousel" data-slide="next">
                         <span class="glyphicon glyphicon-chevron-right"></span>
                         <span class="sr-only">Next</span>
-                      </a>
+                      </a> -->
                     </div>
                     <input type="file" style="display:none" id="prod_imgupload" accept="image/*" multiple>
                     <button id="prod_btn_addimg" style="display:none;" class="btn btn-primary btn-sm image_btn">Új képek hozzáadása<div class="ripple-wrapper"></div></button>
