@@ -4,9 +4,8 @@ ini_set('display_errors', 1);
 
 require_once("vendor/autoload.php");
 
-define("APPCONFIG", "server");
-// 'letsnet', 'serverlocal', 'fkinglocal'
-define("SERVER", "letsnet");
+define("APPCONFIG", "development");
+define("SERVER", CoreApp\AppConfig::getData("server"));
 
 CoreApp\ServerHandler::sitekey();
 
