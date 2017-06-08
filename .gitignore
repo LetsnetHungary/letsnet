@@ -1,3 +1,18 @@
 /* OS X Generated files */
 *.DS_Store
 .DS_Store
+
+/* config files */ 
+
+App/_config/_development_appconfig.json
+App/_config/_server_appconfig.json
+
+/* cms */
+
+_cms
+
+/* git-ftp */
+
+git-ftp.log
+
+index.php
