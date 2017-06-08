@@ -4,8 +4,8 @@
       "DB_TYPE" : "mysql",
       "DB_HOST" : "127.0.0.1",
       "DB_PORT" : "3306",
-      "DB_USER" : "letsneth_user",
-      "DB_PASS" : "^%Ku7tTp(y!M"
+      "DB_USER" : "****",
+      "DB_PASS" : "****"
     },
     "autchenticationDB" : "letsneth_authenticate",
     "modulesDB" : "letsneth_modules",
