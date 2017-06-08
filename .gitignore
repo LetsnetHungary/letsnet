@@ -20,3 +20,5 @@ git-ftp.log
 index.php
 
 development/*
+
+.gitignore
