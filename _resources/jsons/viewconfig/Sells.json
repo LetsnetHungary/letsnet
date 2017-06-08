@@ -1,0 +1,24 @@
+{
+	"css" :
+	{
+	},
+	"js" :
+	{
+		"1" : "../../_assets/_js/Sales/s.js"
+	},
+	"seo" :
+	{
+		"title" : "Eladások",
+		"charset" : "UTF-8",
+
+		"meta" :
+		{
+
+		},
+
+		"og" :
+		{
+
+		}
+	}
+}

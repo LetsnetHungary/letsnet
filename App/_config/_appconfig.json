@@ -1,0 +1,18 @@
+{
+  "database" : {
+    "basic": {
+      "DB_TYPE" : "mysql",
+      "DB_HOST" : "127.0.0.1",
+      "DB_PORT" : "3306",
+      "DB_USER" : "user",
+      "DB_PASS" : "password"
+    },
+    "autchenticationDB" : "db",
+    "modulesDB" : "db",
+    "dataDB" : "db"
+  },
+  "timezone" : "Europe/Budapest",
+  "firstpage" : "Index",
+  "authentication" : "true",
+  "loginsessions" : ["xy", "yz"]
+}

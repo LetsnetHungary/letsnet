@@ -1,0 +1,25 @@
+{
+	"css" :
+	{
+		"1" : "../../_assets/_css/_main.css",
+		"2" : "../../_assets/_css/Products/p.css"
+	},
+	"js" :
+	{
+	},
+	"seo" :
+	{
+		"title" : "Termékkezelő",
+		"charset" : "UTF-8",
+
+		"meta" :
+		{
+
+		},
+
+		"og" :
+		{
+
+		}
+	}
+}

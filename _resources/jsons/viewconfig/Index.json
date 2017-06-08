@@ -1,0 +1,24 @@
+{
+	"css" :
+	{
+		"1" : "../../_assets/_css/_main.css"
+	},
+	"js" :
+	{
+	},
+	"seo" :
+	{
+		"title" : "Főoldal",
+		"charset" : "UTF-8",
+
+		"meta" :
+		{
+
+		},
+
+		"og" :
+		{
+
+		}
+	}
+}

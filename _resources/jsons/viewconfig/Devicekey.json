@@ -1,0 +1,25 @@
+{
+  "css" :
+  {
+
+  },
+  "js" :
+  {
+    "1" : "../../_assets/_js/Devicekey/d.js"
+  },
+  "seo" :
+  {
+    "title" : "Készülékkulcs",
+    "charset" : "UTF-8",
+
+    "meta" :
+    {
+
+    },
+
+    "og" :
+    {
+
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+	"css" : {
+		"1" : "../../_assets/_css/CMS/cms.css"
+	},
+
+	"js" : {
+	},
+
+	"seo" : {
+		"title" : "Content Management System",
+		"charset" : "UTF-8",
+
+		"meta" : {
+
+		},
+
+		"og" : {
+
+		}
+	}
+}
