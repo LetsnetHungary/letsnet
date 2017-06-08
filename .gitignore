@@ -10,9 +10,12 @@ App/_config/_server_appconfig.json
 /* cms */
 
 _cms
+_cms/*
 
 /* git-ftp */
 
 git-ftp.log
 
 index.php
+
+development/*
