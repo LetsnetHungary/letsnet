@@ -16,3 +16,5 @@ _cms
 git-ftp.log
 
 index.php
+
+development/*
