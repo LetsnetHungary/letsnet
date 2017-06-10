@@ -5,7 +5,7 @@ ini_set('display_errors', 1);
 require_once("vendor/autoload.php");
 
 define("APPCONFIG", "development");
-define("SERVER", CoreApp\AppConfig::getData("server"));
+define("SERVER", CoreApp\AppConfig::getData("development"));
 
 CoreApp\ServerHandler::sitekey();
 
