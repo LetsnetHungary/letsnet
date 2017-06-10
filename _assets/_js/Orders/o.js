@@ -128,6 +128,8 @@ function prepareOrderModal(data) {
         price += value.count * value.prod_price * 1000
     });
     
+    console.log(price)
+
     $("#orders").append("<span class=\"little\" id = 'o2'>Összesen: "  + price + "</span>")
 
     $("#order_info_holder").attr("data-id", data.id)
