@@ -8,43 +8,26 @@
 	* @category CoreApp Class
 	* @uses CoreApp namespace
 	*
-	* Select the configuration type in : index.php ---
-	* @var $server_appconfig_file for the server configuration
-	* @var $development_appconfig_file for the development configuration
 	*/
 
 	namespace CoreApp;
 
 		class AppConfig {
 
-			private static $server_appconfig_file = "App/_config/_server_appconfig.json";
-			private static $development_appconfig_file = "App/_config/_development_appconfig.json";
+			private static $appconfig_real_file = "App/_config/_appconfig_real.json";
 
 			/**
-			* Decides which configuration file to use
 			* The function returns to JSON object by default
 			* @param bool $bool -> set this true to change the return type to PHP array
 			*/
 
 			public static function appConfigFile($bool) {
-
 				if($bool) {
-					if(APPCONFIG == "development") {
-						return(json_decode(file_get_contents(self::$development_appconfig_file), TRUE));
-					}
-					else if(APPCONFIG == "server") {
-						return(json_decode(file_get_contents(self::$server_appconfig_file), TRUE));
-					}
+					return(json_decode(file_get_contents(self::$appconfig_real_file), TRUE));
 				}
 				else {
-					if(APPCONFIG == "development") {
-						return(json_decode(file_get_contents(self::$development_appconfig_file)));
-					}
-					else if(APPCONFIG == "server") {
-						return(json_decode(file_get_contents(self::$server_appconfig_file)));
-					}
+					return(json_decode(file_get_contents(self::$appconfig_real_file)));
 				}
-
 			}
 
 			/**
