@@ -124,9 +124,10 @@ function prepareOrderModal(data) {
     var price = 0
     $("#orders").empty()
     $.each(cart,function(index, value){
-        $("#orders").append("<span class=\"little\" id = 'o'>"+value.prod_name +" ("+value.count + "db) " + value.price * 1000+" FT / db    <br>"+"</span>")
-        price += value.count * value.price * 1000
+        $("#orders").append("<span class=\"little\" id = 'o'>"+value.prod_name +" ("+value.count + "db) " + value.prod_price * 1000+" FT / db    <br>"+"</span>")
+        price += value.count * value.prod_price * 1000
     });
+
     $("#orders").append("<span class=\"little\" id = 'o2'>Összesen: "  + price + "</span>")
 
     $("#order_info_holder").attr("data-id", data.id)
