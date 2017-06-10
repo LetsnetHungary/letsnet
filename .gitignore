@@ -4,6 +4,7 @@
 
 /* config files */ 
 
+App/_config/_server_appconfig.json
 App/_config/_appconfig.json
 App/_config/_development_appconfig.json
 
