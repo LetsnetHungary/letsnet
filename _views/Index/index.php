@@ -96,7 +96,7 @@
         <script type="text/javascript" src="../../assets/widgets/chosen/chosen-demo.js"></script>
 
         <div id="page-title">
-          <h2>Főoldal</h2>
+          <h2>Főőoldal</h2>
         </div>
 
 
