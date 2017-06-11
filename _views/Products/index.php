@@ -217,7 +217,7 @@
                     <ul id="properties" class="properties">
                     </ul>
                     <a id="addproperty" href="#" class="btn btn-primary popover-button-default pluscategory btn-sm" title="" data-placement="left" data-original-title="Tulajdonság hozzáadása">
-                            + tulajdonság hozzáadása
+                            + tulajdonság hozzáadásaa
                         <div class="ripple-wrapper"></div></a>
                   </div>
 
