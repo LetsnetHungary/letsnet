@@ -2,9 +2,15 @@
 *.DS_Store
 .DS_Store
 
-/* config files */ 
+/* cms */
 
-App/_config/_development_appconfig.json
-App/_config/_server_appconfig.json
-
+_cms
 _cms/*
+
+/* git-ftp */
+
+git-ftp.log
+
+development/*
+
+App/_config/_appconfig_real.json
