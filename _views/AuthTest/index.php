@@ -41,7 +41,7 @@
                             <i class="glyph-icon icon-spin-5 icon spin"></i>
                         </span>
                         <span class="header-wrapper">
-                            Belépés
+                            Belépéss
                             <small>Csak regisztrált felhasználóknak!</small>
                         </span>
                     </h3>
