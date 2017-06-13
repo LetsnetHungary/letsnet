@@ -32,7 +32,7 @@ namespace CoreApp\Model;
 
       public function loginAttemptUser(CoreApp\AttemptUser $a) {
         if(!$this->checkIfUserLoggedIn()) {
-          $l = $this->PDO->prepare("SELECT users.password, users.uniquekey, users.sitekey, users.database, users.fingerprint FROM users WHERE email = :email");
+          $l = $this->PDO->prepare("SELECT users.password, users.uniquekey, users.sitekey, users.database, users.fingerprint, users.admingroup FROM users WHERE email = :email");
           $l->execute(array(
             ":email" => $a->e
           ));
@@ -53,12 +53,14 @@ namespace CoreApp\Model;
               $a->uniquekey = $d[0]["uniquekey"];
               $a->sitekey = $d[0]["sitekey"];
               $a->database = $d[0]["database"];
+              $a->admingroup = $d[0]["admingroup"];
 
               $this->insertToLoggedTable($a);
 
               $sessionvalues = array(
                 $a->e,
                 $a->uniquekey,
+                $a->admingroup,
                 $a->devicekey,
                 $a->sitekey,
                 $a->database

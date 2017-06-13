@@ -17,6 +17,7 @@ use Exception;
         private $allow;
         private $sitekey;
         private $database;
+        private $admingroup;
 
         public function __get($key) {
           if(property_exists($this, $key)) {

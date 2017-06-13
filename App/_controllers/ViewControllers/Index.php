@@ -5,16 +5,11 @@
 
 			$this->a->userShouldChangeLocation("../AuthTest");
 
-			// User data / modules with USERHANDLER object (CoreApp Controller) necessary for every ViewController load
-			$userHandler = new CoreApp\Controller\UserHandler();
-			
-			$userModules = $userHandler->Modules();
-			$userData = $userHandler->UserData();
-			$pageModules = $userHandler->getPageModules(__CLASS__);
+			$user = new CoreApp\User();
 
-			$this->v->userData = $userData;
-			$this->v->userModules = $userModules;
-			$this->v->pageModules = $pageModules;
+			print_r($user);
+
+			print_r($user->getModules()); die();
 		}
 
 		/*
