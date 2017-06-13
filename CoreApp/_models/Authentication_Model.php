@@ -51,7 +51,6 @@ namespace CoreApp\Model;
               if($deviceOk && password_verify($a->p, $d[0]["password"])) {
               //logged_in
               $a->uniquekey = $d[0]["uniquekey"];
-              $a->allow = $d[0]["allow"];
               $a->sitekey = $d[0]["sitekey"];
               $a->database = $d[0]["database"];
 
