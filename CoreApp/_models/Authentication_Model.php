@@ -32,13 +32,23 @@ namespace CoreApp\Model;
 
       public function loginAttemptUser(CoreApp\AttemptUser $a) {
         if(!$this->checkIfUserLoggedIn()) {
-          $l = $this->PDO->prepare("SELECT users.password, users.uniquekey, users.allow, users.sitekey, users.database FROM users INNER JOIN devices ON (users.uniquekey = devices.uniquekey) WHERE users.email = :email AND devices.devicekey = 'ALL' OR users.email = :email AND devices.devicekey = :devicekey");
+          $l = $this->PDO->prepare("SELECT users.password, users.uniquekey, users.sitekey, users.database, users.fingerprint FROM users WHERE email = :email");
           $l->execute(array(
-            ":email" => $a->e,
-            ":devicekey" => $a->devicekey
+            ":email" => $a->e
           ));
+
           if($d = $l->fetchAll(PDO::FETCH_ASSOC)) {
-            if(password_verify($a->p, $d[0]["password"])) {
+              $deviceOk = true;
+              if ($d[0]["fingerprint"]=="on") {
+                  $stmnt = $this->PDO->prepare("SELECT COUNT(*) FROM devices WHERE uniquekey=:uniquekey AND devicekey=:devicekey");
+                  $stmnt->execute(array(
+                      ":uniquekey" => $a->uniquekey,
+                      ":devicekey" => $a->devicekey
+                  ));
+                  $deviceOk=$stmnt->fetchColumn()>0;
+              }
+
+              if($deviceOk && password_verify($a->p, $d[0]["password"])) {
               //logged_in
               $a->uniquekey = $d[0]["uniquekey"];
               $a->allow = $d[0]["allow"];
