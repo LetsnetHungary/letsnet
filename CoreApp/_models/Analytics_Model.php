@@ -19,10 +19,11 @@ class Analytics_Model extends CoreApp\DataModel
 
     public function visitpage()
     {
+        $uniquekey = CoreApp\Session::get('uniquekey');
         try {
             $stmt = $this->PDO->prepare("INSERT INTO `visits` (`uniquekey`, `conntime`, `connday`, `url`, `useragent`) VALUES (:uniquekey, :conntime, :connday, :url, :useragent)");
             $stmt->execute(array(
-                ":uniquekey" => CoreApp\Session::get('uniquekey'),
+                ":uniquekey" => $uniquekey ? $uniquekey : $_SERVER["REMOTE_ADDR"],
                 ":conntime" => time(),
                 ":connday" => date("F j, Y, g:i a"),
                 ":url" => $_SERVER["REQUEST_URI"],
