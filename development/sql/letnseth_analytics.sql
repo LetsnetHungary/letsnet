@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS `visits` (
   `id` int(255) NOT NULL AUTO_INCREMENT,
-  `uniquekey` varchar(10) NOT NULL,
+  `uniquekey` varchar(100) NOT NULL,
   `conntime` int(40) NOT NULL,
   `connday` varchar(40) NOT NULL,
   `url` varchar(100) NOT NULL,
