@@ -39,10 +39,10 @@ namespace CoreApp\Model;
 
           if($d = $l->fetchAll(PDO::FETCH_ASSOC)) {
               $deviceOk = true;
-              if ($d[0]["fingerprint"]=="on") {
-                  $stmnt = $this->PDO->prepare("SELECT COUNT(*) FROM devices WHERE uniquekey=:uniquekey AND devicekey=:devicekey");
+              if ($d[0]["fingerprint"] == "on") {
+                  $stmnt = $this->PDO->prepare("SELECT COUNT(*) FROM devices WHERE uniquekey = :uniquekey AND devicekey = :devicekey");
                   $stmnt->execute(array(
-                      ":uniquekey" => $a->uniquekey,
+                      ":uniquekey" => $d[0]["uniquekey"],
                       ":devicekey" => $a->devicekey
                   ));
                   $deviceOk=$stmnt->fetchColumn()>0;
