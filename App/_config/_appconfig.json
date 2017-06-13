@@ -9,7 +9,8 @@
     },
     "autchenticationDB" : "letsneth_authenticate",
     "modulesDB" : "letsneth_modules",
-    "dataDB" : "letsneth_userdata"
+    "dataDB" : "letsneth_userdata",
+    "analyticsDB": "letsneth_analytics"
   },
   "timezone" : "Europe/Budapest",
   "firstpage" : "AuthTest",
