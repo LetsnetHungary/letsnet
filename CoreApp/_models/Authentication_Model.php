@@ -60,7 +60,6 @@ namespace CoreApp\Model;
                 $a->e,
                 $a->uniquekey,
                 $a->devicekey,
-                $a->allow,
                 $a->sitekey,
                 $a->database
               );

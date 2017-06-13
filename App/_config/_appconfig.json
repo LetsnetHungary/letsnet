@@ -15,6 +15,6 @@
   "timezone" : "Europe/Budapest",
   "firstpage" : "AuthTest",
   "authentication" : "true",
-  "loginsessions" : ["logged_user", "uniquekey", "devicekey", "allow", "sitekey", "database"],
+  "loginsessions" : ["logged_user", "uniquekey", "devicekey", "sitekey", "database"],
   "server" : "serverlocal"
 }
