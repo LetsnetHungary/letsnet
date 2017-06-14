@@ -23,4 +23,8 @@ namespace CoreApp\Controller;
 			return $this->model->getModules();
 		}
 
+		public function getUserData() {
+			return $this->model->getUserData();
+		}
+
 	}

@@ -7,6 +7,7 @@ use \CoreApp;
 
 		public function __construct() {
 			parent::__construct($this->ClassName(__CLASS__));
+			$this->model = $this->loadModel($this->ClassName(__CLASS__));
 		}
 
 		/*

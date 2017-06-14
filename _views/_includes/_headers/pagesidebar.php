@@ -1,6 +1,6 @@
 <?php
-  $modules = $this->userModules;
-  $c_modules = count($modules);
+  //$modules = $this->userModules;
+  //$c_modules = count($modules);
 ?>
 
 <div id="page-sidebar">
@@ -14,9 +14,9 @@
     </a>
 </div>
 <div class="scroll-sidebar">
-    <ul id="sidebar-menu">
-<li class="header"><span>Modulok</span></li>
-
+    <ul id="sidebar-menu"> 
+<li class="header"><span>Modulok</span></li> <!--
+<
 <?php
 for($i = 0; $i < $c_modules; $i++) {
   if($modules[$i]["lmodule"] == "---") {
@@ -46,10 +46,12 @@ for($i = 0; $i < $c_modules; $i++) {
     <?php
     }
   ?>
+  -->
 </ul>
 
-</div><!-- .sidebar-submenu -->
+</div>  <!-- .sidebar-submenu -->
 </li>
+
   <?php
   }
 }

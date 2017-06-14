@@ -1,5 +1,3 @@
-<?php $pagemodules = $this->pageModules; ?>
-
 <div id="sb-site">
 
   <div id="loading">
@@ -99,30 +97,13 @@
           <h2>Főoldal</h2>
         </div>
 
-
-
-        <?php $this->loadPageModules("letsnet", $pagemodules); ?>
+        <?php print_r($this->modules); ?>
 
       <!-- PAGEMODULES END -->
 
       </div>
     </div>
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!-- WIDGETS -->
 

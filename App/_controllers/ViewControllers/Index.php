@@ -1,15 +1,17 @@
 <?php
 	class Index extends CoreApp\ViewController {
+
 		public function __construct() {
+
 			parent::__construct(__CLASS__);
 
 			$this->a->userShouldChangeLocation("../AuthTest");
 
-			$user = new CoreApp\User();
+			$user = new CoreApp\Controller\User();
 
-			print_r($user);
 
-			print_r($user->getModules()); die();
+			$this->v->modules = $user->getModules();
+			$this->v->userData = $user->getUserData();
 		}
 
 		/*

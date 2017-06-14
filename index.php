@@ -6,9 +6,12 @@ require_once("vendor/autoload.php");
 
 define("SERVER", CoreApp\AppConfig::getData("server"));
 
-CoreApp\ServerHandler::sitekey();
-
 date_default_timezone_set(CoreApp\AppConfig::getData("timezone"));
+
+CoreApp\Session::init();
+CoreApp\ServerHandler::sitekey();
+$analytics = new CoreApp\Controller\Analytics();
+
 CoreApp\Session::init();
 
 $url = isset($_GET["url"]) ? $_GET["url"] : "Index";
