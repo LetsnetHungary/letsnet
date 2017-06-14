@@ -97,7 +97,18 @@
           <h2>Főoldal</h2>
         </div>
 
-        <?php print_r($this->modules); ?>
+        <h3>Oldalak / Pages (tömb): </h3> <br>
+
+        <?php print_r($this->pages); ?>
+
+        </br><br>
+        <br>
+
+        <h3>Oldalhoz tartozó modulok és minimoduljaik (tömb): </h3> <br>
+
+        <?php print_r($this->pagemodules); ?>
+
+        </br>
 
       <!-- PAGEMODULES END -->
 

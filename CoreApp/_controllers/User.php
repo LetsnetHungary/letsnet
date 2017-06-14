@@ -19,8 +19,12 @@ namespace CoreApp\Controller;
 			return $this->model->getAdminGroup();
 		}
 
-		public function getModules() {
-			return $this->model->getModules();
+		public function getPages() {
+			return $this->model->getPages();
+		}
+
+		public function getPageModules() {
+			return $this->model->getPageModules();
 		}
 
 		public function getUserData() {

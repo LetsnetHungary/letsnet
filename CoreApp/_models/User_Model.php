@@ -25,7 +25,21 @@ namespace CoreApp\Model;
 			return $r[0][0];
 		}
 
-		public function getModules() {
+		public function getPages() {
+
+			$DB = $this->database->PDOConnection(CoreApp\AppConfig::getData("database=>modulesDB"));
+
+			$stmt = $DB->prepare("SELECT modulesstore.modulename, modulesstore.redirect, modulesstore.icon FROM modulesstore INNER JOIN modules ON (modulesstore.module = modules.module) WHERE modules.admingroup = :admingroup AND modulesstore.type = :type AND modulesstore.fr = :fr");
+			$stmt->execute(array(
+				":admingroup" => \CoreApp\Session::get("admingroup"),
+				":type" => "page",
+				":fr" => "---"
+			));
+
+			return $stmt->fetchAll(PDO::FETCH_ASSOC);
+		}
+
+		public function getPageModules() {
 
 			$DB = $this->database->PDOConnection(CoreApp\AppConfig::getData("database=>modulesDB"));
 
@@ -65,7 +79,7 @@ namespace CoreApp\Model;
 			$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 			
 			$this->database->Restore();
-			return($result[0]);
+			//return($result[0]);
 		}
 		
 	}

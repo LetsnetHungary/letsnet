@@ -9,8 +9,8 @@
 
 			$user = new CoreApp\Controller\User();
 
-
-			$this->v->modules = $user->getModules();
+			$this->v->pages = $user->getPages();
+			$this->v->pagemodules = $user->getPageModules();
 			$this->v->userData = $user->getUserData();
 		}
 

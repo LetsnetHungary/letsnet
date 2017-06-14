@@ -1,4 +1,4 @@
-<!--
+
 <?php
   $modules = $this->userModules;
   $c_modules = count($modules);
@@ -69,6 +69,3 @@ $(".sidebar-icon").click(function() {
   toggle = !toggle;
 });
 </script>
-
-
--->
