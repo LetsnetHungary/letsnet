@@ -1,18 +1,4 @@
-<div id="loading">
-    <div class="svg-icon-loader">
-        <img src="../../assets/images/svg-loaders/bars.svg" width="40" alt="">
-    </div>
-</div>
 
-<style type="text/css">
-
-    html,body {
-        height: 100%;
-        background: #fff;
-        overflow: hidden;
-    }
-
-</style>
 
 
 <script type="text/javascript" src="../../assets/widgets/wow/wow.js"></script>
@@ -28,6 +14,11 @@
 
 
 <img src="../../assets/image-resources/blurred-bg/blurred-bg-3.jpg" class="login-img wow fadeIn" alt="">
+
+
+
+<script type="text/javascript" src="../../_assets/_js/_authentication/_authentication.js"></script>
+
 
 <div class="center-vertical">
     <div class="center-content">
@@ -74,14 +65,9 @@
     </div>
 </div>
 
-<!-- Theme layout -->
-
-<script type="text/javascript" src="../../assets/themes/admin/layout.js"></script>
-
 <!-- Fingerprint -->
 
 <script type="text/javascript" src="../../_assets/_js/_fingerprint/fingerprint2.min.js"></script>
 
 <!-- Authentication -->
 
-<script type="text/javascript" src="../../_assets/_js/_authentication/_authentication.js"></script>
