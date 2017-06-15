@@ -11,7 +11,7 @@
         }
 
         public function getModules() {
-          $stmt = $this->MODULESDB->prepare("SELECT viewid, name FROM modulesstore");
+          $stmt = $this->MODULESDB->prepare("SELECT fr, name FROM modulesstore");
           $stmt->execute();
           $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
           return($result);

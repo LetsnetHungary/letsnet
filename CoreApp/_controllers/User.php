@@ -19,12 +19,20 @@ namespace CoreApp\Controller;
 			return $this->model->getAdminGroup();
 		}
 
+		public function getPageName() {
+			return "nincs ilyen még";
+		}
+
 		public function getPages() {
 			return $this->model->getPages();
 		}
 
-		public function getPageModules() {
-			return $this->model->getPageModules();
+		public function getPageModules($from) {
+			return $this->model->getPageModules($from);
+		}
+
+		public function getEveryPageModules() {
+			return $this->model->getEveryPageModules();
 		}
 
 		public function getUserData() {

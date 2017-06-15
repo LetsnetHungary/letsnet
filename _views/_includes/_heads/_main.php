@@ -1,18 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="<?php echo $this->charset;?>">
-  <title><?php echo $this->title;?></title>
-    <style>
-        #loading .svg-icon-loader {position: absolute;top: 50%;left: 50%;margin: -50px 0 0 -50px;}
-    </style>
-<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
-
-
-<meta name="description" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-
+    <meta charset="<?php echo $this->charset;?>">
+    <title><?php echo $this->title;?></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
 <!-- SEO -->
 <?php
 
@@ -38,6 +31,10 @@ foreach($this->seo->og as $og => $data)
 }
 ?>
 
+<style>
+    #loading .svg-icon-loader {position: absolute;top: 50%;left: 50%;margin: -50px 0 0 -50px;}
+</style>
+
 <!-- Favicons -->
 
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/images/icons/apple-touch-icon-144-precomposed.png">
@@ -45,8 +42,6 @@ foreach($this->seo->og as $og => $data)
 <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../assets/images/icons/apple-touch-icon-72-precomposed.png">
 <link rel="apple-touch-icon-precomposed" href="../../assets/images/icons/apple-touch-icon-57-precomposed.png">
 <link rel="shortcut icon" href="../../assets/images/icons/favicon.png">
-
-
 
 <!-- HELPERS -->
 
@@ -187,8 +182,6 @@ foreach($this->cssdata as $cssdata)
 }
 ?>
 
-
-
 <!-- JS Core -->
 <script type="text/javascript" src="../../assets/js-core/jquery-core.js"></script>
 <script type="text/javascript" src="../../assets/js-core/jquery-ui.js"></script>
@@ -218,4 +211,84 @@ if($this->jsdata != null) {
 ?>
 
 </head>
-  <body class = "closed-sidebar">
+
+<body class = "closed-sidebar">
+    <div id="sb-site">
+        <div id="loading"><div class="svg-icon-loader"><img src="../../assets/images/svg-loaders/bars.svg" width="40" alt=""></div></div>
+        <div id="page-wrapper">
+            <div id="mobile-navigation"><button id="nav-toggle" class="collapsed" data-toggle="collapse" data-target="#page-sidebar"><span></span></button></div>
+            <div id="page-content-wrapper">
+                <div id="page-content">
+
+                <!-- jQueryUI Spinner -->
+                <script type="text/javascript" src="../../assets/widgets/spinner/spinner.js"></script>
+
+                <script type="text/javascript">
+                /* jQuery UI Spinner */
+
+                $(function() { "use strict";
+                    $(".spinner-input").spinner();
+                });
+                </script>
+
+                <!-- jQueryUI Autocomplete -->
+
+                <script type="text/javascript" src="../../assets/widgets/autocomplete/autocomplete.js"></script>
+                <script type="text/javascript" src="../../assets/widgets/autocomplete/menu.js"></script>
+                <script type="text/javascript" src="../../assets/widgets/autocomplete/autocomplete-demo.js"></script>
+
+                <!-- Touchspin -->
+
+                <!--<link rel="stylesheet" type="text/css" href="../../assets/widgets/touchspin/touchspin.css">-->
+                <script type="text/javascript" src="../../assets/widgets/touchspin/touchspin.js"></script>
+                <script type="text/javascript" src="../../assets/widgets/touchspin/touchspin-demo.js"></script>
+
+                <!-- Input switch -->
+
+                <!--<link rel="stylesheet" type="text/css" href="../../assets/widgets/input-switch/inputswitch.css">-->
+                <script type="text/javascript" src="../../assets/widgets/input-switch/inputswitch.js"></script>
+
+                <script type="text/javascript">
+                /* Input switch */
+
+                $(function() { "use strict";
+                    $('.input-switch').bootstrapSwitch();
+                });
+                </script>
+
+                <!-- Textarea -->
+
+                <script type="text/javascript" src="../../assets/widgets/textarea/textarea.js"></script>
+                <script type="text/javascript">
+                /* Textarea autoresize */
+
+                $(function() { "use strict";
+                    $('.textarea-autosize').autosize();
+                });
+                </script>
+
+                <!-- Multi select -->
+
+                <!--<link rel="stylesheet" type="text/css" href="../../assets/widgets/multi-select/multiselect.css">-->
+                <script type="text/javascript" src="../../assets/widgets/multi-select/multiselect.js"></script>
+                <script type="text/javascript">
+                /* Multiselect inputs */
+
+                $(function() { "use strict";
+                    $(".multi-select").multiSelect();
+                    $(".ms-container").append('<i class="glyph-icon icon-exchange"></i>');
+                });
+                </script>
+
+                <!-- Uniform -->
+
+                <!--<link rel="stylesheet" type="text/css" href="../../assets/widgets/uniform/uniform.css">-->
+                <script type="text/javascript" src="../../assets/widgets/uniform/uniform.js"></script>
+                <script type="text/javascript" src="../../assets/widgets/uniform/uniform-demo.js"></script>
+
+                <!-- Chosen -->
+
+                <!--<link rel="stylesheet" type="text/css" href="../../assets/widgets/chosen/chosen.css">-->
+                <script type="text/javascript" src="../../assets/widgets/chosen/chosen.js"></script>
+                <script type="text/javascript" src="../../assets/widgets/chosen/chosen-demo.js"></script>
+

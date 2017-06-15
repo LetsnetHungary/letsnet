@@ -2,16 +2,9 @@
 	class Index extends CoreApp\ViewController {
 
 		public function __construct() {
-
 			parent::__construct(__CLASS__);
-
 			$this->a->userShouldChangeLocation("../AuthTest");
-
-			$user = new CoreApp\Controller\User();
-
-			$this->v->pages = $user->getPages();
-			$this->v->pagemodules = $user->getPageModules();
-			$this->v->userData = $user->getUserData();
+			$this->setUserModules(__CLASS__);
 		}
 
 		/*

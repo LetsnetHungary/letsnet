@@ -39,32 +39,35 @@ namespace CoreApp\Model;
 			return $stmt->fetchAll(PDO::FETCH_ASSOC);
 		}
 
-		public function getPageModules() {
-
+		public function getEveryPageModules() {
+			
 			$DB = $this->database->PDOConnection(CoreApp\AppConfig::getData("database=>modulesDB"));
 
-			$stmt = $DB->prepare("SELECT modulesstore.module, modulesstore.modulename, GROUP_CONCAT(DISTINCT CONCAT(modulesstore.pagemodulename,',',modulesstore.pagemodule) SEPARATOR ';') FROM modules INNER JOIN modulesstore ON (modules.module = modulesstore.module) WHERE modules.admingroup = :admingroup GROUP BY modules.module");
+			$stmt = $DB->prepare("SELECT modulesstore.module, modulesstore.modulename, modulesstore.fr FROM modulesstore WHERE modulesstore.type = :type AND modulesstore.fr = :fr");
 			$stmt->execute(array(
-				":admingroup" => CoreApp\Session::get("admingroup")
+				":type" => "everypage",
+				":fr" => "page"
 			));
-
-			$return = array();
-			$result = $stmt->fetchAll(PDO::FETCH_NUM);
-			
-			foreach($result as $row) {
-				$return[$row[0]] = array();
-				$return[$row[0]]["modulename"] = $row[1];
-				$return[$row[0]]["pagemodules"] = array();
-				$pagemodules = explode(";", $row[2]);
-				foreach($pagemodules as $pm) {
-					$pm = explode(",", $pm);
-					$return[$row[0]]["pagemodules"][$pm[1]] = $pm[0];
-				}
-			}
 
 			$this->database->Restore();
 
-			return $return;
+			return $stmt->fetchAll(PDO::FETCH_ASSOC);
+		}
+
+		public function getPageModules($from) {
+
+			$DB = $this->database->PDOConnection(CoreApp\AppConfig::getData("database=>modulesDB"));
+
+			$stmt = $DB->prepare("SELECT modulesstore.module, modulesstore.modulename, modulesstore.fr FROM modulesstore INNER JOIN modules ON (modules.module = modulesstore.module) WHERE modules.admingroup = :admingroup AND modulesstore.type = :type AND modulesstore.fr = :fr");
+			$stmt->execute(array(
+				":admingroup" => CoreApp\Session::get("admingroup"),
+				":type" => "pagemodule",
+				":fr" => $from
+			));
+
+			$this->database->Restore();
+
+			return $stmt->fetchAll(PDO::FETCH_ASSOC);
 		}
 
 		public function getUserData() {
@@ -79,7 +82,7 @@ namespace CoreApp\Model;
 			$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 			
 			$this->database->Restore();
-			//return($result[0]);
+			return($result[0]);
 		}
 		
 	}

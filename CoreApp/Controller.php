@@ -4,9 +4,10 @@ namespace CoreApp;
 use \CoreApp\Model;
 
 	abstract class Controller {
+
 		public $model;
 
-		public function ClassName($class) {
+		protected function ClassName($class) {
 			return substr(strrchr($class, "\\"), 1);
 		}
 
@@ -41,10 +42,10 @@ use \CoreApp\Model;
 			return null;
 		}
 
-		public function PageModulesPHP($sitekey, $pagemodules) {
+		protected function PageModulesPHP($pagemodules) {
 			$c_p = count($pagemodules);
 			for($i=0; $i < $c_p; $i++) {
-				$path = "_cms/$sitekey/modules/php/".$pagemodules[$i]["viewid"]."/".$pagemodules[$i]["module"].".php";
+				$path = "modules/php/".$pagemodules[$i]["fr"]."/".$pagemodules[$i]["module"].".php";
 				$this->includePagemodulPHP($path);
 			}
 		}
