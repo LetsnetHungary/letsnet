@@ -1,10 +1,6 @@
-
-
-
 <script type="text/javascript" src="../../assets/widgets/wow/wow.js"></script>
 <script type="text/javascript">
     /* WOW animations */
-
     wow = new WOW({
         animateClass: 'animated',
         offset: 100
@@ -12,19 +8,11 @@
     wow.init();
 </script>
 
-
 <img src="../../assets/image-resources/blurred-bg/blurred-bg-3.jpg" class="login-img wow fadeIn" alt="">
-
-
-
-<script type="text/javascript" src="../../_assets/_js/_authentication/_authentication.js"></script>
-
 
 <div class="center-vertical">
     <div class="center-content">
-
         <div class="col-md-3 center-margin">
-
             <form id = "loginform">
                 <div class="content-box wow bounceInDown modal-content">
                     <h3 class="content-box-header content-box-header-alt bg-default">
@@ -64,10 +52,10 @@
 
     </div>
 </div>
-
 <!-- Fingerprint -->
 
 <script type="text/javascript" src="../../_assets/_js/_fingerprint/fingerprint2.min.js"></script>
 
 <!-- Authentication -->
 
+<script type="text/javascript" src="../../_assets/_js/_authentication/_authentication.js"></script>

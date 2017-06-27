@@ -31,8 +31,8 @@ namespace CoreApp\Controller;
 			return $this->model->getPageModules($from);
 		}
 
-		public function getEveryPageModules() {
-			return $this->model->getEveryPageModules();
+		public function getEveryPageModules($class) {
+			return $this->model->getEveryPageModules($class);
 		}
 
 		public function getUserData() {

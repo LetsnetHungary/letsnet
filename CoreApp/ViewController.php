@@ -36,7 +36,7 @@ namespace CoreApp;
 			/* User Object */
 			$this->user = new Controller\User();
 
-			$everypagemodules = $this->user->getEveryPageModules();
+			$everypagemodules = $this->user->getEveryPageModules($class);
 			$this->v->everypagemodules = !empty($everypagemodules) ? $everypagemodules : 0; /* View's render function loads the UserModules */
 
 			/* activate  user's modules PHP files */

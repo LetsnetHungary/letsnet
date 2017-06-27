@@ -7,12 +7,16 @@ namespace CoreApp\Model;
 
 	class User_Model extends CoreApp\DataModel {
 
+		public function __call($method, $args) {
+			die();
+		}
+
 		public function __construct() {
 			parent::__construct();
 		}
 
 		public function getData($arg) {
-			return Session::get($arg);;
+			return Session::get($arg);
 		}
 
 		public function getAdminGroup() {
@@ -39,9 +43,19 @@ namespace CoreApp\Model;
 			return $stmt->fetchAll(PDO::FETCH_ASSOC);
 		}
 
-		public function getEveryPageModules() {
+		public function getEveryPageModules($class) {
 			
 			$DB = $this->database->PDOConnection(CoreApp\AppConfig::getData("database=>modulesDB"));
+
+			$stmt = $DB->prepare("SELECT COUNT(*) FROM modulesstore WHERE module = :module");
+			$stmt->execute(array(
+				":module" => $class
+			));
+
+			$bool = $stmt->fetchAll();
+			if(!$bool[0][0]) {
+				return array();
+			}
 
 			$stmt = $DB->prepare("SELECT modulesstore.module, modulesstore.modulename, modulesstore.fr FROM modulesstore WHERE modulesstore.type = :type AND modulesstore.fr = :fr");
 			$stmt->execute(array(
@@ -51,6 +65,7 @@ namespace CoreApp\Model;
 
 			$this->database->Restore();
 
+			//return $bool[0][0] ? $stmt->fetchAll(PDO::FETCH_ASSOC) : array();
 			return $stmt->fetchAll(PDO::FETCH_ASSOC);
 		}
 
@@ -83,6 +98,17 @@ namespace CoreApp\Model;
 			
 			$this->database->Restore();
 			return($result[0]);
+		}
+
+		public function userAllowedToApiFunction() {
+			$DB = $this->database->PDOConnection(CoreApp\AppConfig::getData("database=>dataDB"));
+
+			$stmt = $DB->prepare("");
+			$stmt->execute(array(
+				
+			));
+
+			$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		}
 		
 	}
